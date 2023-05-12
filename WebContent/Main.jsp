@@ -10,7 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-<%="main 사랑해~" %>
+<%="메인테스트" %>
 <aside></aside>
 <section></section>
 <article></article>

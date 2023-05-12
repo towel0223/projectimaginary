@@ -10,7 +10,9 @@
 <body>
 <header></header>
 <nav></nav>
-테스트만 하는 내인생 프래쉬맨 수정했어요왜안되
+
+<%="첫번쨰프래쉬맨의일기" %>
+<%="왜안돼" %>
 <aside></aside>
 <section></section>
 <article></article>

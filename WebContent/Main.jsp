@@ -10,7 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-abcdefg
+
 <aside></aside>
 <section></section>
 <article></article>

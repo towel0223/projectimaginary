@@ -10,7 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-abcdefgasassaas
+
 <aside></aside>
 <section></section>
 <article></article>

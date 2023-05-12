@@ -10,7 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-<%="왜안돼" %>
+<%="main 사랑해~" %>
 <aside></aside>
 <section></section>
 <article></article>

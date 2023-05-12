@@ -10,8 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-
-<%="신입사랑해" %>
+<%="서브테스트" %>
 
 <aside></aside>
 <section></section>

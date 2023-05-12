@@ -10,7 +10,7 @@
 <body>
 <header></header>
 <nav></nav>
-테스트만 하는 내인생 프래쉬맨
+테스트만 하는 내인생 프래쉬맨 수정했어요
 <aside></aside>
 <section></section>
 <article></article>

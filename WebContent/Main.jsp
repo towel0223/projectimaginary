@@ -11,8 +11,8 @@
 <header></header>
 <nav></nav>
 
-<%="첫번쨰프래쉬맨의일기" %>
-<%="왜안돼" %>
+<%="신입사랑해" %>
+
 <aside></aside>
 <section></section>
 <article></article>

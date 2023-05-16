@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   border: 0px solid silver;
+  
 }
 
 img {
@@ -22,6 +23,7 @@ body {
   color: #333;
   letter-spacing: -0.3px;
   font-weight: 400;
+  
 }
 
 a:link {
@@ -152,4 +154,10 @@ header {
 .sub_menu li a {
   color: #8c8c8c;
   font-size: 13px;
+}
+.main_board{
+	margin-top: 120px;
+width: 100%;
+  min-width: 1000px;
+
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "member.memberDAO" %>
 <%
@@ -41,9 +41,8 @@ function checkAll(form){
 		form.yoshi_pw2.select();
 		return false;
 	}
-	var regPass=/^[a-zA-z0-9]{8,25}$/;
-	var regPass2=/^[!@#$%^*&~]$/;
-	if(!regPass.test(form.yoshi_pw.value) && regPass2.test(form.yoshi_pw.value)){
+	var regPass = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^*&~])[a-zA-Z\d!@#$%^*&~]{8,25}$/;
+	if(!regPass.test(form.yoshi_pw.value)){
 		alert("비밀번호는 영문 대소문자와 숫자와 특수문자 8자리 이상 입력해야 됩니다!");
 		form.yoshi_pw.value="";
 		form.yoshi_pw2.value="";
@@ -84,11 +83,13 @@ function checkAll(form){
 		return false;
 	}
 }
-function dbcheckId(form){
+function dbcheckId(form, result) {
 	if(result){
-		alert("1");
+		alert("중복입니다. 아이디를 다시 입력해 주세요.");
+		form.yoshi_id.value="";
+		form.yoshi_id.focus();
 	}else{
-		alert("2");
+		alert("아이디를 사용할 수 있습니다.");
 	}
 	return false;
 }
@@ -98,7 +99,7 @@ function dbcheckId(form){
 <form  name="yform" action="yMembershipProcess.jsp" method="post" onsubmit="return checkAll(this)">
 	아이디<br/>
 	<input type="text" name="yoshi_id">
-	<input type="button" onClick="return dbCheckId()" value="중복확인"><br/>
+	<input type="button" onClick="return dbcheckId(this.form, <%= result %>)" value="중복확인"><br/>
 	비밀번호<br/>
 	<input type="password" name="yoshi_pw"><br/>
 	비밀번호 재확인<br/>

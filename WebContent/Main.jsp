@@ -35,8 +35,11 @@
       </ul>
     </div>
   </header>
-  
-
+  <section>
+  <div class="main_board">
+ 
+  </div>
+  </section>
 
 </body>
 </html>

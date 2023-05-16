@@ -38,12 +38,10 @@ if(check){
 	if(checkNic){
 		JSFunction.alertBack("이미 사용중인 닉네임 입니다.", out);
 	}
-int result = dao.setMemberDTO(dto);
-dao.close();
-
-//메인화면으로 이동
-response.sendRedirect("");
-
+	int result = dao.setMemberDTO(dto);
+	dao.close();
+	//메인화면으로 이동
+	response.sendRedirect("");
 }
 %>
 </body>

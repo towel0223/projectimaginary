@@ -35,9 +35,9 @@
         패스워드 : <input type="password" name="user_pw" /><br />
         <input type="submit" value="로그인하기" />
     </form>
-    <form action="yMembership.jsp" method="post">
+    <!-- <form action="yMembership.jsp" method="post">
     	<input type="submit" value="회원가입하기" />
-    </form>
+    </form> 
     <%
     } else {
     %>
@@ -45,7 +45,7 @@
         <a href="yLogout.jsp">[로그아웃]</a>
     <%
     }
-    %>
+    %> -->
 
 </body>
 </html>

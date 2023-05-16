@@ -3,7 +3,7 @@ package board;
 import java.sql.Date;
 
 public class boardDTO {
-	
+
 	private int num;
 	private String title;
 	private String content;

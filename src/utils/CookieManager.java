@@ -5,7 +5,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 public class CookieManager {
-	
+
 	public static void makeCookie(String cName,String cValue,int cTime,HttpServletResponse response)
 	{
 		Cookie cookie=new Cookie(cName,cValue);
@@ -23,7 +23,7 @@ public class CookieManager {
 		{
 			cookieValue=co.getValue();
 		}
-			
+
 		}
 		return cookieValue;
 	}

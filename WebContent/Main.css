@@ -1,163 +1,167 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap')
+	;
+
+@import
+	url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: 0px solid silver;
-  
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0px solid silver;
 }
 
 img {
-  width: 100px;
+	width: 100px;
 }
 
 body {
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  font-size: 16px;
-  line-height: 1rem;
-  color: #333;
-  letter-spacing: -0.3px;
-  font-weight: 400;
-  
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+	font-size: 16px;
+	line-height: 1rem;
+	color: #333;
+	letter-spacing: -0.3px;
+	font-weight: 400;
 }
 
 a:link {
-  text-decoration: none;
-  color: #111;
+	text-decoration: none;
+	color: #111;
 }
 
 a:visited {
-  color: #111;
+	color: #111;
 }
 
 a:hover {
-  color: #111;
+	color: #111;
 }
 
 a:active {
-  color: #111;
+	color: #111;
 }
 
-ul,
-li {
-  list-style: none;
+ul, li {
+	list-style: none;
 }
 
 img {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 header {
-  width: 100%;
-  height: 95px;
-  background: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  padding: 0 3%;
+	width: 100%;
+	height: 95px;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	padding: 0 3%;
 }
 
 .header_wrap {
-  width: 100%;
-  min-width: 1000px;
-  height: 95px;
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-  padding: 0 81px;
+	width: 100%;
+	min-width: 1000px;
+	height: 95px;
+	position: relative;
+	display: flex;
+	margin: 0 auto;
+	padding: 0 81px;
 }
 
 .logo {
-  margin: 37px 40px 0 0;
+	margin: 37px 40px 0 0;
 }
 
 .logo img {
-  transform:scale(2);
-  display: block;
-  position: relative;
-  top: -65px;
-  left: -50px;
+	transform: scale(2);
+	display: block;
+	position: relative;
+	top: -65px;
+	left: -50px;
 }
 
 .header_wrap nav {
-  width: px;
-  margin-top: 41px;
+	width: px;
+	margin-top: 41px;
 }
 
 .header_wrap nav ul li {
-  display: inline-block;
-  margin-right: 28px;
+	display: inline-block;
+	margin-right: 28px;
 }
 
 .header_wrap nav ul li a {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
+	color: #000;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .search_box {
-  width: 300px;
-  height: 34px;
-  border: 1px solid #d2d2d2;
-  border-radius: 17px;
-  vertical-align: middle;
-  margin-top: 32px;
-  margin-left: 7px;
-  padding: 0 15px;
-  position: relative;
-  left: -50px;
+	width: 300px;
+	height: 34px;
+	border: 1px solid #d2d2d2;
+	border-radius: 17px;
+	vertical-align: middle;
+	margin-top: 32px;
+	margin-left: 7px;
+	padding: 0 15px;
+	position: relative;
+	left: -50px;
 }
 
 .search_box img {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin-top: 6px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-top: 6px;
 }
 
 .search_box input::placeholder {
-  font-size: 12px;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  font-weight: 400;
-  columns: #555;
+	font-size: 12px;
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+	font-weight: 400;
+	columns: #555;
 }
 
 .search_box input {
-  position: absolute;
-  top: 19px;
-  left: 45px;
-  margin-top: -10px;
+	position: absolute;
+	top: 19px;
+	left: 45px;
+	margin-top: -10px;
 }
 
 .sub_menu {
-  position: absolute;
-  right: 71px;
-  width: 220px;
-  margin-top: 43px;
+	position: absolute;
+	right: 71px;
+	width: 220px;
+	margin-top: 43px;
 }
 
 .sub_menu li {
-  display: inline-block;
-  margin-left: 25px;
+	display: inline-block;
+	margin-left: 25px;
 }
 
 .sub_menu li a {
-  color: #8c8c8c;
-  font-size: 13px;
+	color: #8c8c8c;
+	font-size: 13px;
 }
-.main_board{
-	margin-top: 120px;
-width: 100%;
-  min-width: 1000px;
 
+.main_board {
+	margin-top: 120px;
+	width: 100%;
+	min-width: 1000px;
 }

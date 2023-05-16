@@ -38,7 +38,7 @@
   <section>
   <div class="main_board">
  		섹션 부분
- 		채성 ㅎㅇ
+ 		채성 ㅎㅇㅎㅇㄴ
   </div>
   </section>
 

@@ -48,5 +48,5 @@ public class commentsDTO {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-	
+
 }

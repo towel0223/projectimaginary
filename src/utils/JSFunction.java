@@ -4,15 +4,15 @@ package utils;
 import javax.servlet.jsp.JspWriter;
 
 public class JSFunction {
-	
+
 	public static void alertLocation(String msg,String url,JspWriter out)
 	{
 		try {
 			String script=""
-						+"<script>"
-						+"    alert('"+msg+"');"
-						+"location.href='"+url+"';"
-						+"</script>";
+					+"<script>"
+					+"    alert('"+msg+"');"
+					+"location.href='"+url+"';"
+					+"</script>";
 			out.print(script);
 		}catch(Exception e) {}
 	}
@@ -20,10 +20,10 @@ public class JSFunction {
 	{
 		try {
 			String script=""
-						 +"<script>"
-						 +"			alert('"+msg+"');"
-						 +"history.back()"
-						 +"</script>";
+					+"<script>"
+					+"			alert('"+msg+"');"
+					+"history.back()"
+					+"</script>";
 			out.print(script);;
 		}catch(Exception e) {}
 	}

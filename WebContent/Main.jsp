@@ -38,7 +38,7 @@
   <section>
   <div class="main_board">
  		섹션 부분
- 		tq
+ 		채성 ㅎㅇ
   </div>
   </section>
 

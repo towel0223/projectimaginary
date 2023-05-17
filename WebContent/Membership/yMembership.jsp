@@ -19,17 +19,10 @@ boolean result = dao.checkId(yId);
 <title>요시 회원가입</title>
 <script type="text/javascript">
 
-    
 
-
-function checkAll(form){
-	if (form.yoshi_id.length >= 8) {
-        errorSpan.style.display = "none";
-    } else {
-        errorSpan.style.display = "inline";
-    }
+function checkAll(form){ 
 	if(form.yoshi_id.value==""){
-		alert("아이디를 입력하세요!");
+        alert("아이디를 입력하세요!");
 		form.yoshi_id.focus();
 		return false;
 	}
@@ -113,7 +106,7 @@ function dbcheckId(form, result) {
 <body>
 <form  name="yform" action="yMembershipProcess.jsp" method="post" onsubmit="return checkAll(this)">
 	아이디<br/>
-	<input type="text" name="yoshi_id"> <input type="button" onClick="return dbcheckId(this.form, <%= result %>)" value="중복확인"><br/>
+	<input type="text" name="yoshi_id" id="yoshi"> <input type="button" onClick="return dbcheckId(this.form, <%= result %>)" value="중복확인"><br/>
 	
 	<span id="usernameError" class="error">아이디는 8글자 이상 입력해주세요.</span>
 	

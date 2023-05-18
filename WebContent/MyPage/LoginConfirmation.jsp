@@ -7,6 +7,10 @@
 <title>Login confirmation</title>
 </head>
 <body>
-zz
+<%
+if(session.getAttribute("UserId") == null){
+	
+}
+%>
 </body>
 </html>

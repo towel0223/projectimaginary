@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>당신의 플레이리스트, YM</title>
-<link rel="stylesheet" href="Main.css">
+<title>top</title>
+<link rel="stylesheet" href="../Main.css">
 </head>
 <body>
-	<header>
+<header>
 		<div class="header_wrap">
 			<div class="logo">
-				<a href="Main.jsp"> <img src="logo.png">
+				<a href="../Main.jsp"> <img src="../logo.png">
 				</a>
 			</div>
 			<div class="search_box">
@@ -23,7 +23,7 @@
 					<li><a href="#">자유게시판</a></li>
 					<li><a href="#">인기차트</a></li>
 					<li><a href="#">추천음악</a></li>
-					<li><a href="./MyPage/LoginConfirmation.jsp">마이페이지</a></li>
+					<li><a href="#">마이페이지</a></li>
 					<li><a href="#">Q&A</a></li>
 				</ul>
 			</nav>

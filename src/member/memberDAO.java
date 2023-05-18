@@ -2,6 +2,8 @@ package member;
 
 import common.JDBConnect;
 
+import java.sql.SQLException;
+
 import javax.servlet.ServletContext;
 
 import member.memberDTO;
@@ -14,7 +16,7 @@ public class memberDAO extends JDBConnect  {
 	public memberDTO getMemberDTO(String id){ //데이터 검색
 		memberDTO dto=new memberDTO();
 		String sql="select * from member where id=?";
-		try {
+      try{
 			psmt=con.prepareStatement(sql);
 			psmt.setString(1, id);
 			rs=psmt.executeQuery();
@@ -49,11 +51,26 @@ public class memberDAO extends JDBConnect  {
 					result=false;
 					break;
 				}
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs=psmt.executeQuery();
+			if(rs.next())
+			{
+				dto.setId(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setTel(rs.getString(4));
+				dto.setNickname(rs.getString(5));
+				dto.setRegidate(rs.getDate(6));
+
 			}
-		}catch(Exception e) {
+		}catch(Exception e)
+		{
 			e.printStackTrace();
 		}
-		return result;
+
+		return dto;
+
 	}
 
 	public int setMemberDTO(memberDTO dto) {//회원가입
@@ -76,4 +93,42 @@ public class memberDAO extends JDBConnect  {
 		}
 		return result;
 	}
+	
+	public boolean idCheck(String id) {//아이디 중복체크
+		boolean result = false;
+		String sql = "select * from member";
+		try {
+			stmt= con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				if (rs.getString(1).equals(id)) {
+					result = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public boolean nicCheck(String nic) {//닉네임 중복 체크
+		boolean result = false;
+		String sql = "select * from member";
+		try {
+			stmt= con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				if (rs.getString(5).equals(nic)) {
+					result = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }
+
+

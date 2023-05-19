@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'DOSIyagiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background-color: #a4ffff;
+    
+}
+
+body form input{
+	font-family: 'DOSIyagiMedium';
+	font-size:30px;
+	color: #792075;
+    font-weight: normal;
+    font-style: normal;
+    
+} 
+body form div input{
+	border: 1px solid #ccc;
+	background-color: #f2f2f2; color: #333;
+	padding: 5px; margin-bottom: 10px;
+} 
+#logo{
+	display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    margin: 100px 0px 0px 0px;
+  	padding: 0;
+  	width: 100%;
+    
+}
+#join{
+	display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+	padding: 0;
+  	width: 100%;
+  	margin: 50px 0px 0px 0px;
+  	}
+body form div select{
+	font-family: 'DOSIyagiMedium';
+	font-size:30px;
+	color: #792075;
+    font-weight: normal;
+    font-style: normal;
+	border: 1px solid #ccc;
+	background-color: #f2f2f2; color: #333;
+	padding: 5px; margin-bottom: 10px;
+}

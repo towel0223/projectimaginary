@@ -19,6 +19,8 @@ if(memberDTO.getId() != null){
 	// 로그인 성공
 	session.setAttribute("UserId", memberDTO.getId());
 	session.setAttribute("UserName", memberDTO.getName());
+	session.setAttribute("NicName", memberDTO.getNickname());
+	session.setAttribute("Tel", memberDTO.getTel());
 	response.sendRedirect("../Main.jsp");
 }
 else{

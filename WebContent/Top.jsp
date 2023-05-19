@@ -23,7 +23,7 @@
 					<li><a href="#">자유게시판</a></li>
 					<li><a href="#">인기차트</a></li>
 					<li><a href="#">추천음악</a></li>
-					<li><a href="#">마이페이지</a></li>
+					<li><a href="./LoginConfirmation.jsp">마이페이지</a></li>
 					<li><a href="#">Q&A</a></li>
 				</ul>
 			</nav>

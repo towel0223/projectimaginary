@@ -19,7 +19,7 @@ if(memberDTO.getId() != null){
 	// 로그인 성공
 	session.setAttribute("UserId", memberDTO.getId());
 	session.setAttribute("UserName", memberDTO.getName());
-	response.sendRedirect("../Main.jsp");
+	response.sendRedirect("../Main/Main.jsp");
 }
 else{
 	// 로그인 실패

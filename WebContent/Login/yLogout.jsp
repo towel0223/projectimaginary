@@ -12,7 +12,7 @@
 	session.invalidate();
 	
 	// 속성 삭제 후 페이지 이동
-	response.sendRedirect("../Main.jsp");
+	response.sendRedirect("../Main/Main.jsp");
 %>
 </body>
 </html>

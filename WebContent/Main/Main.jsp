@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="Main.css">
 </head>
 <body>
-<jsp:include page="Common/Nav.jsp" />
+<jsp:include page="../Common/Nav.jsp" />
 	<section>
     	<div class="main_board" align="center">
         	<div class="image-grid">

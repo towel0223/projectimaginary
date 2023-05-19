@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="utils.JSFunction"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,8 @@
 	session.invalidate();
 	
 	// 속성 삭제 후 페이지 이동
-	response.sendRedirect("../Main/Main.jsp");
+	JSFunction.alertLocation("로그아웃 되었습니다.", "../Main/Main.jsp", out);
+	// response.sendRedirect("../Main/Main.jsp");
 %>
 </body>
 </html>

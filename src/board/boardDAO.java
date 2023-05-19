@@ -86,12 +86,12 @@ public class boardDAO extends JDBConnect  {
                 boardDTO dto = new boardDTO(); 
 
                 dto.setNum(rs.getInt("num"));
-                dto.setTitle(rs.getString("num"));
-                dto.setContent(rs.getString("num"));
-                dto.setId(rs.getString("num"));
-                dto.setPostdate(rs.getDate("num"));
-                dto.setNum(rs.getInt("num"));
-                dto.setNum(rs.getInt("num"));
+                dto.setTitle(rs.getString("title"));
+                dto.setContent(rs.getString("content"));
+                dto.setId(rs.getString("id"));
+                dto.setPostdate(rs.getDate("postdate"));
+                dto.setVisitcount(rs.getInt("visitcount"));
+                dto.setLikes(rs.getInt("likes"));
 
                 bbs.add(dto);  // 결과 목록에 저장
             }
@@ -127,5 +127,108 @@ public class boardDAO extends JDBConnect  {
         }
         
         return result;
+    }
+	
+
+    // 지정한 게시물을 찾아 내용을 반환합니다.
+    public boardDTO selectView(int num) { 
+    	boardDTO dto = new boardDTO();
+        
+        // 쿼리문 준비
+        String query = "SELECT B.*, M.name " 
+                     + " FROM member M INNER JOIN board B " 
+                     + " ON M.id=B.id "
+                     + " WHERE num=?";
+
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setInt(1, num);    // 인파라미터를 일련번호로 설정 
+            rs = psmt.executeQuery();  // 쿼리 실행 
+
+            // 결과 처리
+            if (rs.next()) {
+                dto.setNum(rs.getInt(1)); 
+                dto.setTitle(rs.getString(2));
+                dto.setContent(rs.getString("content"));
+                dto.setPostdate(rs.getDate("postdate"));
+                dto.setId(rs.getString("id"));
+                dto.setVisitcount(rs.getInt(6));
+                dto.setLikes(rs.getInt("likes"));
+            }
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 상세보기 중 예외 발생");
+            e.printStackTrace();
+        }
+        
+        return dto; 
+    }
+
+    // 지정한 게시물의 조회수를 1 증가시킵니다.
+    public void updateVisitCount(int num) { 
+        // 쿼리문 준비 
+        String query = "UPDATE board SET "
+                     + " visitcount=visitcount+1 "
+                     + " WHERE num=?";
+        
+        try {
+            psmt = con.prepareStatement(query);
+            psmt.setInt(1, num);  // 인파라미터를 일련번호로 설정 
+            psmt.executeQuery();     // 쿼리 실행 
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 조회수 증가 중 예외 발생");
+            e.printStackTrace();
+        }
+    }
+    
+    // 지정한 게시물을 수정합니다.
+    public int updateEdit(boardDTO dto) { 
+        int result = 0;
+        
+        try {
+            // 쿼리문 템플릿 
+            String query = "UPDATE board SET "
+                         + " title=?, content=? "
+                         + " WHERE num=?";
+            
+            // 쿼리문 완성
+            psmt = con.prepareStatement(query);
+            psmt.setString(1, dto.getTitle());
+            psmt.setString(2, dto.getContent());
+            psmt.setInt(3, dto.getNum());
+            
+            // 쿼리문 실행 
+            result = psmt.executeUpdate();
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 수정 중 예외 발생");
+            e.printStackTrace();
+        }
+        
+        return result; // 결과 반환 
+    }
+
+    // 지정한 게시물을 삭제합니다.
+    public int deletePost(boardDTO dto) { 
+        int result = 0;
+
+        try {
+            // 쿼리문 템플릿
+            String query = "DELETE FROM board WHERE num=?"; 
+
+            // 쿼리문 완성
+            psmt = con.prepareStatement(query); 
+            psmt.setInt(1, dto.getNum()); 
+
+            // 쿼리문 실행
+            result = psmt.executeUpdate(); 
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 삭제 중 예외 발생");
+            e.printStackTrace();
+        }
+        
+        return result; // 결과 반환
     }
 }

@@ -16,7 +16,41 @@ public class memberDAO extends JDBConnect  {
 	public memberDTO getMemberDTO(String id){ //데이터 검색
 		memberDTO dto=new memberDTO();
 		String sql="select * from member where id=?";
+      try{
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs=psmt.executeQuery();
+			if(rs.next())
+			{
+				dto.setId(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setTel(rs.getString(4));
+				dto.setNickname(rs.getString(5));
+				dto.setRegidate(rs.getDate(6));
+
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		return dto;
+
+	}
+
+	public boolean checkId(String id) {
+		boolean result=true;
 		try {
+			String sql = "select id from member where id=?";
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs=psmt.executeQuery();
+			while(rs.next()) {
+				if(id.equals(rs.getString(1))) {
+					result=false;
+					break;
+				}
 			psmt=con.prepareStatement(sql);
 			psmt.setString(1, id);
 			rs=psmt.executeQuery();

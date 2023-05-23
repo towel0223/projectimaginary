@@ -66,13 +66,13 @@ dao.close();  // DB 연결 닫기
 		        </tr>
 		<%
 		} else {// 게시물이 있을 때
-		    int virtualNum = 0;  // 화면상에서의 게시물 번호
+		    // int virtualNum = 0;  // 화면상에서의 게시물 번호
 		    for (boardDTO dto : boardLists)
 		    {
-		        virtualNum = totalCount--;  // 전체 게시물 수에서 시작해 1씩 감소
+		        // virtualNum = totalCount--;  // 전체 게시물 수에서 시작해 1씩 감소
 		%>
 		        <tr align="center">
-		            <td><%= virtualNum %></td>  <!--게시물 번호-->
+		            <td><%= dto.getNum() %></td>  <!--게시물 번호-->
 		            <td align="left">  <!--제목(+ 하이퍼링크)-->
 		                <a href="View.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %></a> 
 		            </td>

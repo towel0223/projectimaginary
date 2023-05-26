@@ -94,34 +94,53 @@ function checkAll(form){
 }
 </script>
 </head>
+<link rel="stylesheet" href="yMembership.css">
 <body>
-<form  name="yform" action="yMembershipProcess.jsp" method="post" onsubmit="return checkAll(this);">
-	아이디<br/>
-	<input type="text" name="yoshi_id"><br/>
-	<span id="idError" style="color:red"></span>
-	비밀번호<br/>
-	<input type="password" name="yoshi_pw"><br/>
-	<span id="passError" style="color:red"></span>
-	비밀번호 재확인<br/>
-	<input type="password" name="yoshi_pw2"><br/>
-	<span id="pass2Error" style="color:red"></span>
-	닉네임<br/>
-	<input type="text" name="yoshi_nic"><br/>
-	<span id="nicError" style="color:red"></span>
-	이름<br/>
-	<input type="text" name="yoshi_name"><br/>
-	<span id="nameError" style="color:red"></span>
-	전화번호<br/>
-	<select name="yoshi_tel1">
-		<option value="010">010</option>
-		<option value="02">02</option>
-		<option value="031">031</option>
-		<option value="051">051</option>
-	</select>
-	<input type="text" name="yoshi_tel2" size="5" maxlength="4">
-	<input type="text" name="yoshi_tel3" size="5" maxlength="4"><br/>
-	<span id="telError" style="color:red"></span>
-	<input type="submit" value="회원가입">
-</form>
+	<div id="logo">
+		<a href="Main.jsp" > 
+			<img src="logo.png">
+		</a>
+	</div>	
+	<form  id ="join" name="yform" action="yMembershipProcess.jsp" method="post" onsubmit="return checkAll(this);">
+		
+		<div>		
+			<input type="text" name="yoshi_id" id="yoshi" placeholder="아이디"> <br/>
+			<span id="idError" style="color:red"></span>
+		</div>
+		<div>		
+			
+			<input type="password" name="yoshi_pw" placeholder="비밀번호"><br/>
+			<span id="passError" style="color:red"></span>
+		</div>
+		<div>
+			<input type="password" name="yoshi_pw2" placeholder="비밀번호 확인"><br/>
+			<span id="pass2Error" style="color:red"></span>
+		</div>
+		<div>
+			<input type="text" name="yoshi_nic" placeholder="닉네임"><br/>
+			<span id="nicError" style="color:red"></span>
+		</div>
+		<div>	
+			<input type="text" name="yoshi_name" placeholder="이름"><br/>
+			<span id="nameError" style="color:red"></span>
+		</div>
+		<div id="tell">
+			<select name="yoshi_tel1">
+				<option value="010">010</option>
+				<option value="02">02</option>
+				<option value="031">031</option>
+				<option value="051">051</option>
+			</select>
+			<input type="text" name="yoshi_tel2" size="5" maxlength="4" placeholder="0000">
+			<input type="text" name="yoshi_tel3" size="5" maxlength="4" placeholder="0000"><br/>
+			<span id="telError" style="color:red"></span>
+		</div>
+		<div>
+		<input type="submit" value="회원가입">
+		</div>
+	</form>
+		
+		
+
 </body>
 </html>

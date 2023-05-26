@@ -22,6 +22,7 @@
 		</nav>
 		<ul class="sub_menu">
 			<li><a href="#">YM 소개</a></li>
+
 			<% 
 				// 로그인 시 로그아웃 글자가 뜨게끔 설정
 			if (session.getAttribute("UserId") == null) {
@@ -35,6 +36,9 @@
 				}
 			%>
 			<li><a href="../Membership/yMembership.jsp">회원가입</a></li>
+
+			
+
 		</ul>
 	</div>
 </header>

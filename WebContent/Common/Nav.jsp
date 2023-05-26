@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="Nav.css">
 <header>
@@ -22,7 +22,7 @@
 		</nav>
 		<ul class="sub_menu">
 			<li><a href="#">YM 소개</a></li>
-			<%
+			<% 
 				// 로그인 시 로그아웃 글자가 뜨게끔 설정
 			if (session.getAttribute("UserId") == null) {
 			%>

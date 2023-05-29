@@ -62,15 +62,11 @@ public class memberDAO extends JDBConnect  {
 				dto.setTel(rs.getString(4));
 				dto.setNickname(rs.getString(5));
 				dto.setRegidate(rs.getDate(6));
-
 			}
-		}catch(Exception e)
-		{
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
-
 		return dto;
-
 	}
 
 	public int setMemberDTO(memberDTO dto) {//회원가입
@@ -127,6 +123,35 @@ public class memberDAO extends JDBConnect  {
 			e.printStackTrace();
 		}
 		
+		return result;
+	}
+	
+	public int updateMember(memberDTO dto) {//회원정보 수정
+		int result=0;
+		try {
+			String sql ="UPDATE member SET pass=?, nickname=?, tel=? where id=?";
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, dto.getPass());
+			psmt.setString(2, dto.getNickname());
+			psmt.setString(3, dto.getTel());
+			psmt.setString(4, dto.getId());
+			result=psmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public int deleteMember(memberDTO dto) {//회원정보 삭제
+		int result = 0;
+		try {
+			String sql = "DELETE FROM member WHERE id=?";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, dto.getId());
+			result = psmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 }

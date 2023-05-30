@@ -7,9 +7,29 @@
 <title>당신의 플레이리스트, YM</title>
 <link rel="stylesheet" href="Main.css">
 </head>
+<script type="text/javascript">
+  function submitForm(value) {
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = "../Music/SearchMusic.jsp";
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "value";
+    input.value = value;
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  function handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      var value = document.getElementById("searchWord").value;
+      submitForm(value);
+    }
+  }
+</script>
 <body>
 
-<jsp:include page="../Common/Nav.jsp" />
 	<header>
 		<div class="header_wrap">
 			<div class="logo">
@@ -17,15 +37,15 @@
 				</a>
 			</div>
 			<div class="search_box">
-				<img src="https://imgur.com/dYH02M1.png"> <input type="text"
-					placeholder="검색어를 입력하세요.">
+				<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)"> <input type="text"
+					placeholder="검색어를 입력하세요." id="searchWord" onkeypress="handleKeyPress(event)" >
 			</div>
 			<nav>
 				<ul>
 					<li><a href="#">자유게시판</a></li>
 					<li><a href="#">인기차트</a></li>
 					<li><a href="#">추천음악</a></li>
-					<li><a href="#">마이페이지</a></li>
+					<li><a href="./LoginConfirmation.jsp">마이페이지</a></li>
 					<li><a href="#">Q&A</a></li>
 				</ul>
 			</nav>
@@ -46,26 +66,8 @@
 			</ul>
 		</div>
 	</header>
-
 	<section>
-    	<div class="main_board" align="center">
-        	<div class="image-grid">
-            	<%
-            	String src = "https://via.placeholder.com/150";
-            	for (int i = 1; i <= 10; i++) {
-            	%>
-            	<img src="<%= src %>" class="thumbnail-image">
-            	<%
-            	    if (i % 5 == 0) {
-            	%>
-            	<br style="clear: both;">
-            	<%
-                	}
-            	}
-            	%>
-        	</div>
-    	</div>
+		<div class="main_board"></div>
 	</section>
-
 </body>
 </html>

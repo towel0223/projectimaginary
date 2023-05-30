@@ -8,7 +8,7 @@ public class songDTO {
 	private String stitle;
 	private String sname;
 	private Date sdate;
-	private Blob sphoto;
+	private String sphoto;
 
 	public int getSnum() {
 		return snum;
@@ -34,10 +34,10 @@ public class songDTO {
 	public void setSdate(Date sdate) {
 		this.sdate = sdate;
 	}
-	public Blob getSphoto() {
+	public String getSphoto() {
 		return sphoto;
 	}
-	public void setSphoto(Blob sphoto) {
+	public void setSphoto(String sphoto) {
 		this.sphoto = sphoto;
 	}
 	public songDTO() {

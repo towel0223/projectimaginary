@@ -1,24 +1,27 @@
 @charset "UTF-8";
 @font-face {
-    font-family: 'DOSIyagiMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    background-color: #a4ffff;
-    
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 	background-color: #e9e9e9;   
 }
-
 body form input{
 	font-family: 'DOSIyagiMedium';
-	font-size:30px;
+	font-size:20px;
 	color: #792075;
     font-weight: normal;
     font-style: normal;
@@ -27,9 +30,9 @@ body form div input {
     color: #333;
     padding: 5px;
     Text-align: Center;
-    border: 3px solid #C0FFFF;
-    border-radius: 5px;
-    background-color: #5FEE9E;
+    border: none;
+    border-bottom: 2px solid #5FEE9E;
+    background-color: #FFFFFF;
 }
 body form div{
 	width: 550px;
@@ -63,29 +66,33 @@ body form div span{
     justify-content:center;
     align-items:center;
 	padding: 0;
-  	width: 100%;
-  	margin: 20px 0px 0px 0px;
+  	width: 430px;
+  	height: 630px;
+  	border: 5px solid #48f5ff;
+  	border-radius: 20px;
+	box-shadow: -5px 5px 5px 5px gray;
+	background-color:white;
+	
   	}
 body form div select {
     font-family: 'DOSIyagiMedium';
-    font-size: 30px;
+    font-size: 20px;
     color: #792075;
     font-weight: normal;
     font-style: normal;
-    border: 3px solid #C0FFFF;
-    background-color: #5FEE9E;
+    border: none;
+    border-bottom: 2px solid #5FEE9E;
+    background-color: #FFFFFF;
     color: #333;
     padding: 5px;
     Text-align: Center;
-    border-radius: 5px;
 }
-#tell_title{
-	height: 44.4px;
-	width: 330.8px;
-	display:flex;
-	flex-direction: row;
-	    align-items: flex-start;
-
+#tell_title {
+    height: 38px;
+    width: 235.6px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 .tellme{
 	width:110.2px;
@@ -95,4 +102,16 @@ body form div select {
 	margin-top: 10px;
 	text-align: center;
 font-family: 'DOSIyagiMedium';
+}
+input:focus {
+	outline:none;
+	border-bottom: 2px solid green;
+	}
+select:focus {
+	outline:none;
+	border-bottom: 2px solid green;
+}
+#but:hover {
+	cursor: pointer;
+	
 }

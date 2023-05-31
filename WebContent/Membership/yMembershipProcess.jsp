@@ -41,7 +41,7 @@ if(check){
 	int result = dao.setMemberDTO(dto);
 	dao.close();
 	//메인화면으로 이동
-	response.sendRedirect("");
+	JSFunction.alertLocation("회원가입 성공!", "../Main/Main.jsp" , out);
 }
 %>
 </body>

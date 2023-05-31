@@ -22,17 +22,18 @@ body form input{
 	color: #792075;
     font-weight: normal;
     font-style: normal;
-    
 } 
-body form div input{
-	border: 1px solid #ccc;
-	background-color: #f2f2f2; color: #333;
-	padding: 5px; margin-bottom: 10px;
-	Text-align: Center;
-} 
+body form div input {
+    color: #333;
+    padding: 5px;
+    Text-align: Center;
+    border: 3px solid #C0FFFF;
+    border-radius: 5px;
+    background-color: #5FEE9E;
+}
 body form div{
 	width: 550px;
-	height: 80px;
+	height: 90px;
 	display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,17 +46,16 @@ body form div span{
 } 
 #telError{
 	width: 550px;
-	height: 22px;
+	height: 27px;
 } 
 #logo{
 	display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-    margin: 100px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
   	padding: 0;
   	width: 100%;
-    
 }
 #join{
 	display:flex;
@@ -64,19 +64,35 @@ body form div span{
     align-items:center;
 	padding: 0;
   	width: 100%;
-  	margin: 50px 0px 0px 0px;
+  	margin: 20px 0px 0px 0px;
   	}
-body form div select{
-		font-family: 'DOSIyagiMedium';
-		font-size:30px;
-		color: #792075;
-	    font-weight: normal;
-	    font-style: normal;
-		border: 1px solid #ccc;
-		background-color: #f2f2f2; color: #333;
-		padding: 5px; margin-bottom: 10px;
-	}
+body form div select {
+    font-family: 'DOSIyagiMedium';
+    font-size: 30px;
+    color: #792075;
+    font-weight: normal;
+    font-style: normal;
+    border: 3px solid #C0FFFF;
+    background-color: #5FEE9E;
+    color: #333;
+    padding: 5px;
+    Text-align: Center;
+    border-radius: 5px;
+}
 #tell_title{
+	height: 44.4px;
+	width: 330.8px;
 	display:flex;
-	flex-direction: row
+	flex-direction: row;
+	    align-items: flex-start;
+
+}
+.tellme{
+	width:110.2px;
+	height:44.4px;
+}
+.error{
+	margin-top: 10px;
+	text-align: center;
+font-family: 'DOSIyagiMedium';
 }

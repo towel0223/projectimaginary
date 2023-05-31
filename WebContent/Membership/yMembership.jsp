@@ -105,38 +105,38 @@ function checkAll(form){
 		
 		<div>		
 			<input type="text" name="yoshi_id" id="yoshi" placeholder="아이디"> 
-			<span id="idError" style="color:red"></span>
+			<span id="idError" class="error" style="color:red"></span>
 		</div>
 		<div>		
 			
 			<input type="password" name="yoshi_pw" placeholder="비밀번호">
-			<span id="passError" style="color:red"></span>
+			<span id="passError" class="error" style="color:red"></span>
 		</div>
 		<div>
 			<input type="password" name="yoshi_pw2" placeholder="비밀번호 확인">
-			<span id="pass2Error" style="color:red"></span>
+			<span id="pass2Error" class="error" style="color:red"></span>
 		</div>
 		<div>
 			<input type="text" name="yoshi_nic" placeholder="닉네임">
-			<span id="nicError" style="color:red"></span>
+			<span id="nicError" class="error" style="color:red"></span>
 		</div>
 		<div>	
 			<input type="text" name="yoshi_name" placeholder="이름">
-			<span id="nameError" style="color:red"></span>
+			<span id="nameError" class="error" style="color:red"></span>
 		</div>
 		<div>
 		<div id="tell_title">
-			<select name="yoshi_tel1" id="tell">
+			<select name="yoshi_tel1" id="tell" class="tellme">
 				<option value="010">010</option>
 				<option value="02">02</option>
 				<option value="031">031</option>
 				<option value="051">051</option>
 			</select>
-			<input type="text" name="yoshi_tel2" size="5" maxlength="4" placeholder="0000" id="">
-			<input type="text" name="yoshi_tel3" size="5" maxlength="4" placeholder="0000">
+			<input type="text" name="yoshi_tel2" class="tellme" size="5" maxlength="4" placeholder="0000" id="">
+			<input type="text" name="yoshi_tel3" class="tellme" size="5" maxlength="4" placeholder="0000">
 			</div>
 			
-			<span id="telError" style="color:red"></span>
+			<span class="error" id="telError" style="color:red"></span>
 		</div>
 		<div>
 		<input type="submit" value="회원가입">

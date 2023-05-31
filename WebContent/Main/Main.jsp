@@ -45,7 +45,7 @@
 					<li><a href="#">자유게시판</a></li>
 					<li><a href="#">인기차트</a></li>
 					<li><a href="#">추천음악</a></li>
-					<li><a href="./LoginConfirmation.jsp">마이페이지</a></li>
+					<li><a href="../LoginConfirmation.jsp">마이페이지</a></li>
 					<li><a href="#">Q&A</a></li>
 				</ul>
 			</nav>
@@ -54,15 +54,15 @@
 				<%
 				if(session.getAttribute("UserId") == null){
 				%>
-					<li><a href="./Login/yLoginForm.jsp">로그인</a></li>
+					<li><a href="../Login/yLoginForm.jsp">로그인</a></li>
 				<%
 				} else{
 				%>
-					<li><a href="./Login/yLogout.jsp">로그아웃</a></li>
+					<li><a href="../Login/yLogout.jsp">로그아웃</a></li>
 				<%
 				}
 				%>
-				<li><a href="./Membership/yMembership.jsp">회원가입</a></li>
+				<li><a href="../Membership/yMembership.jsp">회원가입</a></li>
 			</ul>
 		</div>
 	</header>

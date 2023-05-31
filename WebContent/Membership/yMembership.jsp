@@ -139,7 +139,7 @@ function checkAll(form){
 			<span class="error" id="telError" style="color:red"></span>
 		</div>
 		<div>
-		<input type="submit" value="회원가입">
+		<input id="but" type="submit" value="회원가입">
 		</div>
 	</form>
 		

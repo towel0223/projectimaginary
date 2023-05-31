@@ -20,11 +20,11 @@ function checkAll(form){
 	var check = true;
 	//아이디 검사
 	if(form.yoshi_id.value==""){
-		idError.innerHTML = "*아이디를 입력하세요!<br>";
+		idError.innerHTML = "아이디를 입력하세요!<br>";
 		form.yoshi_id.focus();
 		check =  false;
 	}else if(!regId.test(form.yoshi_id.value)){
-		idError.innerHTML="*아이디는 영문 대소문자와 숫자 4~12자리로 입력해야합니다!<br>";
+		idError.innerHTML="아이디는 영문 대소문자와 숫자 4~12자리로 입력해야합니다!<br>";
 		form.yoshi_id.value="";
 		form.yoshi_id.focus();
 		check =  false;
@@ -33,25 +33,25 @@ function checkAll(form){
 	}
 	//비밀번호 검사
 	if(form.yoshi_pw.value==""){
-		passError.innerHTML="*비밀번호를 입력하세요!<br>";
+		passError.innerHTML="비밀번호를 입력하세요!<br>";
 		form.yoshi_pw.focus();
 		check =  false;
 	}else if(form.yoshi_pw2.value==""){
-		passError2.innerHTML="*비밀번호 확인을 입력하세요!<br>";
+		passError2.innerHTML="비밀번호 확인을 입력하세요!<br>";
 		form.yoshi_pw2.focus();
 		check =  false;
 	}else if(form.yoshi_pw.value != form.yoshi_pw2.value){
-		passError2.innerHTML="*비밀번호가 서로 다릅니다!<br>";
+		passError2.innerHTML="비밀번호가 서로 다릅니다!<br>";
 		form.yoshi_pw2.select();
 		check =  false;
 	}else if(!regPass.test(form.yoshi_pw.value)){
-		passError.innerHTML="*비밀번호는 영문 대소문자와 숫자와 특수문자 8자리 이상 입력해야 됩니다!<br>";
+		passError.innerHTML="비밀번호는 영문 대소문자와 숫자와 특수문자 8자리 이상 입력해야 됩니다!<br>";
 		form.yoshi_pw.value="";
 		form.yoshi_pw2.value="";
 		form.yoshi_pw.focus();
 		check =  false;
 	}else if(form.yoshi_id.value == form.yoshi_pw.value){
-		passError.innerHTML="*아이디와 비밀번호가 같을 수 없습니다!<br>";
+		passError.innerHTML="아이디와 비밀번호가 같을 수 없습니다!<br>";
 		yform.yoshi_pw.value="";
 		yform.yoshi_pw2.value="";
 		yform.yoshi_pw2.focus();
@@ -62,11 +62,11 @@ function checkAll(form){
 	}
 	//닉네임 검사
 	if(form.yoshi_nic.value==""){
-		nicError.innerHTML="*닉네임을 입력하세요!<br>";
+		nicError.innerHTML="닉네임을 입력하세요!<br>";
 		form.yoshi_nic.focus();
 		check =  false;
 	}else if(form.yoshi_nic.value.length < 2 || form.yoshi_nic.value.length > 9){
-		nicError.innerHTML="*닉네임은 2~8자리로 입력해야 합니다.<br>";
+		nicError.innerHTML="닉네임은 2~8자리로 입력해야 합니다.<br>";
 		form.yoshi_nic.focus();
 		check =  false;
 	}else{
@@ -74,7 +74,7 @@ function checkAll(form){
 	}
 	//이름 검사
 	if(form.yoshi_name.value==""){
-		nameError.innerHTML="*이름을 입력하세요!<br>";
+		nameError.innerHTML="이름을 입력하세요!<br>";
 		form.yoshi_name.focus();
 		check =  false;
 	}else{
@@ -82,10 +82,10 @@ function checkAll(form){
 	}
 	//전화번호 검사
 	if(!regTel1.test(form.yoshi_tel2.value)){
-		telError.innerHTML="*전화번호를 입력하지 않았거나 올바르지 않습니다.<br>";
+		telError.innerHTML="전화번호를 입력하지 않았거나 올바르지 않습니다.<br>";
 		check =  false;
 	}else if(!regTel2.test(form.yoshi_tel3.value)){
-		telError.innerHTML="*전화번호를 입력하지 않았거나 올바르지 않습니다.<br>";
+		telError.innerHTML="전화번호를 입력하지 않았거나 올바르지 않습니다.<br>";
 		check =  false;
 	}else{
 		telError.innerHTML="";

@@ -7,18 +7,6 @@
 <title>요시뮤직 로그인 폼</title>
 <link rel="stylesheet" href="yLoginForm.css">
 </head>
-<script>
-    function validateForm(form) {
-        if (!form.user_id.value) {
-            alert("아이디를 입력하세요.");
-            return false;
-        }
-        if (form.user_pw.value == "") {
-            alert("패스워드를 입력하세요.");
-            return false;
-        }
-    }
-</script>
 <body>
 
 <div id='logo'>
@@ -41,20 +29,33 @@
         onsubmit="return validateForm(this);">
         <input type="text" name="user_id" placeholder="아이디" class='yoshifont' />
         <input type="password" name="user_pw" placeholder="패스워드" class='yoshifont' />
-        <input type="submit" value="로그인하기" class='yoshifont' id="button" />
+       <div id="login">
+        <input type="submit" value="로그인" class='yoshifont' id="button" />
+        <input id="memberShip" type="button" value="회원가입" /> 
+    </div>
     </form>
-    <!-- <form action="yMembership.jsp" method="post">
-    	<input type="submit" value="회원가입하기" />
-    </form> 
+    		
+   	
     <%
     } else {
     %>
         <%= session.getAttribute("UserName") %> 회원님, 로그인하셨습니다.<br />
-        <a href="yLogout.jsp">[로그아웃]</a>
+        <a href="yLogout.jsp">로그아웃</a>
     <%
     }
-    %> -->
+    %> 
 </div>
-
+<script>
+	var signupButton=document.getElementById("memberShip");
+	signupButton.addEventListener("click",function(){window.location.href="../Membership/yMembership.jsp";});
+    function validateForm(form) {
+        if (!form.user_id.value) {
+            alert("아이디를 입력하세요.");
+            return false;}
+        if (form.user_pw.value == "") {
+            alert("패스워드를 입력하세요.");
+            return false;}
+    }
+</script>
 </body>
 </html>

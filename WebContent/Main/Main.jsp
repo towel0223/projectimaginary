@@ -33,7 +33,7 @@
 	<header>
 		<div class="header_wrap">
 			<div class="logo">
-				<a href="Main.jsp"> <img src="logo.png">
+				<a href="Main.jsp"> <img src="../images/logo.png">
 				</a>
 			</div>
 			<div class="search_box">

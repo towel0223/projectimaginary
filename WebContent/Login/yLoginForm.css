@@ -69,12 +69,29 @@ input:hover{
 border-bottom:2px solid #828282;
 	
 }
-#button{
-	width:50%;
+#button,#memberShip{
+width:40%;
 border:5px outset #A0A0FF;	
 border-radius:20px;
+background-color: #FFEB46;
+
 }
-#button:hover{
+#memberShip{
+	font-size:20px;
+}
+#button{
+	font-size:25px;
+}
+
+#button:hover,#memberShip:hover{
 	cursor: pointer;
 	border: 5px outset #4646CD;
+	background-color: #FFDC46;
+	color: #FF8200;
 }
+#login{
+	display: flex;
+	width:100%;
+	justify-content: space-around;
+}
+

@@ -109,10 +109,14 @@ input:focus,select:focus,input:hover,select:hover {
 #but:hover {
 	cursor: pointer;
 	border: 3px solid green;
+	background-color:#008080;
+	color:#BEF5BE;
 }
 #but{
 	border: 3px solid #5FEE9E;
 	border-radius: 20px;
+	background-color:#46B4B4;
+	color:#FFF0F0;
 	width:20%;
 	
 }

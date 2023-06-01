@@ -20,8 +20,14 @@
     }
 </script>
 <body>
-<div>
-<h2>Login</h2>
+
+<div id='logo'>
+		<a href="../Main/Main.jsp" > 
+			<img src="../images/logo.png">
+		</a>
+	</div>	
+	<div id="loginform">	
+<h2 class='yoshifont' id='yoshilogin'>로그인</h2>
 
 <span style="color: red; font-size: 1.2em;"> 
         <%= request.getAttribute("LoginErrMsg") == null ?
@@ -33,9 +39,9 @@
     
     <form action="yLoginProcess.jsp" method="post" name="loginFrm"
         onsubmit="return validateForm(this);">
-        <span>아이디 : <input type="text" name="user_id" /></span>
-        <span>패스워드 : <input type="password" name="user_pw" /></span>
-        <input type="submit" value="로그인하기" />
+        <input type="text" name="user_id" placeholder="아이디" class='yoshifont' />
+        <input type="password" name="user_pw" placeholder="패스워드" class='yoshifont' />
+        <input type="submit" value="로그인하기" class='yoshifont' id="button" />
     </form>
     <!-- <form action="yMembership.jsp" method="post">
     	<input type="submit" value="회원가입하기" />
@@ -49,5 +55,6 @@
     }
     %> -->
 </div>
+
 </body>
 </html>

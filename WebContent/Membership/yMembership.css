@@ -1,4 +1,4 @@
-@charset "UTF-8";
+	@charset "UTF-8";
 @font-face {
     font-family: 'SUITE-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
@@ -19,7 +19,7 @@ body {
  	background-color: #e9e9e9;   
 }
 body form input{
-	font-family: 'DOSIyagiMedium';
+	font-family: 'SUITE-Regular';
 	font-size:20px;
 	color: #792075;
     font-weight: normal;
@@ -34,7 +34,7 @@ body form div input {
     background-color: #FFFFFF;
 }
 body form div{
-	width: 550px;
+	width: 430px;
 	height: 90px;
 	display: flex;
     flex-direction: column;
@@ -66,15 +66,14 @@ body form div span{
     align-items:center;
 	padding: 0;
   	width: 430px;
-  	height: 630px;
-  	border: 5px solid #48f5ff;
-  	border-radius: 20px;
+  	height: 630px;	
 	box-shadow: -5px 5px 5px 5px gray;
 	background-color:white;
-	
+	padding-top: 2%;
+    border-top: 10px solid #5A5AFF;
   	}
 body form div select {
-    font-family: 'DOSIyagiMedium';
+    font-family: 'SUITE-Regular';
     font-size: 20px;
     color: #792075;
     font-weight: normal;
@@ -100,17 +99,20 @@ body form div select {
 .error{
 	margin-top: 10px;
 	text-align: center;
-font-family: 'DOSIyagiMedium';
+font-family: 'SUITE-Regular';
 }
-input:focus {
+input:focus,select:focus,input:hover,select:hover {
 	outline:none;
 	border-bottom: 2px solid green;
 	}
-select:focus {
-	outline:none;
-	border-bottom: 2px solid green;
-}
+
 #but:hover {
 	cursor: pointer;
+	border: 3px solid green;
+}
+#but{
+	border: 3px solid #5FEE9E;
+	border-radius: 20px;
+	width:20%;
 	
 }

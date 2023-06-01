@@ -21,9 +21,7 @@
         <%= request.getAttribute("LoginErrMsg") == null ?
                 "" : request.getAttribute("LoginErrMsg") %>
     </span>
-    <%
-    if (session.getAttribute("UserId") == null) {
-    %>
+    
     
     <form action="yLoginProcess.jsp" method="post" name="loginFrm"
         onsubmit="return validateForm(this);">
@@ -34,16 +32,7 @@
         <input id="memberShip" type="button" value="회원가입" /> 
     </div>
     </form>
-    		
-   	
-    <%
-    } else {
-    %>
-        <%= session.getAttribute("UserName") %> 회원님, 로그인하셨습니다.<br />
-        <a href="yLogout.jsp">로그아웃</a>
-    <%
-    }
-    %> 
+    	 
 </div>
 <script>
 	var signupButton=document.getElementById("memberShip");

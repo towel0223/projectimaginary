@@ -97,7 +97,7 @@ function checkAll(form){
 <link rel="stylesheet" href="yMembership.css">
 <body>
 	<div id="logo">
-		<a href="Main.jsp" > 
+		<a href="../Main/Main.jsp" > 
 			<img src="../images/logo.png">
 		</a>
 	</div>	

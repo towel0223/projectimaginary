@@ -1,10 +1,13 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="Nav.css">
+<html>
+<head></head>
+<body>
 <header>
 	<div class="header_wrap">
 		<div class="logo">
-			<a href="../Main/Main.jsp"> <img src="logo.png">
+			<a href="../Main/Main.jsp"> <img src="../images/logo.png">
 			</a>
 		</div>
 		<div class="search_box">
@@ -42,3 +45,5 @@
 		</ul>
 	</div>
 </header>
+</body>
+</html>

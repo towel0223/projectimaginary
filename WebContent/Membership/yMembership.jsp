@@ -98,7 +98,7 @@ function checkAll(form){
 <body>
 	<div id="logo">
 		<a href="Main.jsp" > 
-			<img src="logo.png">
+			<img src="../images/logo.png">
 		</a>
 	</div>	
 	<form  id ="join" name="yform" action="yMembershipProcess.jsp" method="post" onsubmit="return checkAll(this);">

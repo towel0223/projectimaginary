@@ -22,7 +22,7 @@
 		if(delResult == 1){
 			JSFunction.alertLocation("삭제되었습니다.", "FreeBoardList.jsp", out);
 		} else {
-			JSFunction.alertBack("삭제에 시랲하였습니다.", out);
+			JSFunction.alertBack("삭제에 실패하였습니다.", out);
 		}
 	}
 	else{

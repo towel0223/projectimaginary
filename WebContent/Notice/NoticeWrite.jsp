@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./IsLoggedIn.jsp" %>
+<%@ include file="../Board/IsLoggedIn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원제 게시판</title>
+<title>관리자 공지사항</title>
 <script type="text/javascript">
 	function validateForm(form){
 		if(form.title.value == ""){
@@ -23,9 +23,7 @@
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<link rel="stylesheet" href="../Common/Nav.css">
-
-<h2>자유게시판 - 글쓰기</h2>
+<h2>공지사항 - 글쓰기</h2>
 <form name="writeFrm" method="post" action="WriteProcess.jsp" onsubmit="return validateForm(this);">
 	<table border="1" width="90%">
 		<tr>
@@ -44,7 +42,7 @@
 			<td colspan="2" align="center">
 				<button type="submit">작성 완료</button>
 				<button type="reset">다시 입력</button>
-				<button type="button" onclick="location.href='FreeBoardList.jsp'">목록 보기</button>
+				<button type="button" onclick="location.href='Notice.jsp'">목록 보기</button>
 			</td>
 		</tr>
 	</table>

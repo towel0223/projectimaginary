@@ -1,73 +1,106 @@
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	Date today = new Date();
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	String formattedDate = dateFormat.format(today);
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>당신의 플레이리스트, YM</title>
-<link rel="stylesheet" href="Main.css">
+<link rel="stylesheet" href="../Common/Nav.css">
+<link rel="stylesheet" href="./Main.css">
 </head>
 <script type="text/javascript">
-  function submitForm(value) {
-    var form = document.createElement("form");
-    form.method = "POST";
-    form.action = "../Music/SearchMusic.jsp";
-    var input = document.createElement("input");
-    input.type = "hidden";
-    input.name = "value";
-    input.value = value;
-    form.appendChild(input);
-    document.body.appendChild(form);
-    form.submit();
-  }
+	function submitForm(value) {
+		var form = document.createElement("form");
+		form.method = "POST";
+		form.action = "../Music/SearchMusic.jsp";
+		var input = document.createElement("input");
+		input.type = "hidden";
+		input.name = "value";
+		input.value = value;
+		form.appendChild(input);
+		document.body.appendChild(form);
+		form.submit();
+	}
 
-  function handleKeyPress(event) {
-    if (event.keyCode === 13) {
-      var value = document.getElementById("searchWord").value;
-      submitForm(value);
-    }
-  }
+	function handleKeyPress(event) {
+		if (event.keyCode === 13) {
+			var value = document.getElementById("searchWord").value;
+			submitForm(value);
+		}
+	}
 </script>
 <body>
-
-	<header>
-		<div class="header_wrap">
-			<div class="logo">
-				<a href="Main.jsp"> <img src="../images/logo.png">
-				</a>
-			</div>
-			<div class="search_box">
-				<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)"> <input type="text"
-					placeholder="검색어를 입력하세요." id="searchWord" onkeypress="handleKeyPress(event)" >
-			</div>
-			<nav>
-				<ul>
-					<li><a href="../Board/FreeBoardList.jsp">자유게시판</a></li>
-					<li><a href="#">인기차트</a></li>
-					<li><a href="#">추천음악</a></li>
-					<li><a href="../Mypage/MypageForm.jsp">마이페이지</a></li>
-					<li><a href="#">Q&A</a></li>
-				</ul>
-			</nav>
-			<ul class="sub_menu">
-				<li><a href="#">YM 소개</a></li>
-				<%
-				if(session.getAttribute("UserId") == null){
-				%>
-					<li><a href="../Login/yLoginForm.jsp">로그인</a></li>
-				<%
-				} else{
-				%>
-					<li><a href="../Login/yLogout.jsp">로그아웃</a></li>
-				<%
-				}
-				%>
-				<li><a href="../Membership/yMembership.jsp">회원가입</a></li>
-			</ul>
-		</div>
-	</header>
+	<jsp:include page="../Common/Nav.jsp" />
+	
 	<section>
 		<div class="main_board"></div>
 	</section>
+	
+	<div id="banner">
+		<img alt="행사 배너" src="../images/행사 배너.jpg">
+		<img alt="행사 배너" src="../images/행사 배너2.jpg">
+	</div>
+	
+	<div class="personal_recommend_w">
+		<div class="personal_recommend_head">
+			<h4>오늘의 음악</h4>
+			<div class="total_status_data">총 10곡 | <%=formattedDate %></div>
+		</div>
+		<div class="album_list">
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+		</div>
+		
+		<div class="album_list">
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+			<div class="album_list1">
+				<img src="../images/기타치는물고기.jpg">
+				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
 </html>

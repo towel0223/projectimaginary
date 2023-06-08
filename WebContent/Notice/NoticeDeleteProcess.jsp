@@ -1,13 +1,13 @@
-<%@ page import="board.boardDAO" %>
-<%@ page import="board.boardDTO" %>
+<%@ page import="notice.noticeDAO" %>
+<%@ page import="notice.noticeDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./IsLoggedIn.jsp" %>
+<%@ include file="../Board/IsLoggedIn.jsp" %>
 <%
 	int num = Integer.parseInt(request.getParameter("num"));
 
-	boardDTO dto = new boardDTO();
-	boardDAO dao = new boardDAO(application);
+	noticeDTO dto = new noticeDTO();
+	noticeDAO dao = new noticeDAO(application);
 	dto = dao.selectView(num);
 	
 	String sessionId = session.getAttribute("UserId").toString();
@@ -20,7 +20,7 @@
 		dao.close();
 		
 		if(delResult == 1){
-			JSFunction.alertLocation("삭제되었습니다.", "FreeBoardList.jsp", out);
+			JSFunction.alertLocation("삭제되었습니다.", "Notice.jsp", out);
 		} else {
 			JSFunction.alertBack("삭제에 실패하였습니다.", out);
 		}
@@ -29,4 +29,5 @@
 		JSFunction.alertBack("본인만 삭제할 수 있습니다.", out);
 	}
 	
+	return;
 %>

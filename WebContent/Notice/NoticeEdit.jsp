@@ -1,12 +1,12 @@
-<%@ page import="board.boardDAO" %>
-<%@ page import="board.boardDTO" %>
+<%@ page import="notice.noticeDAO" %>
+<%@ page import="notice.noticeDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./IsLoggedIn.jsp" %>
+<%@ include file="../Board/IsLoggedIn.jsp" %>
 <%
 int num = Integer.parseInt(request.getParameter("num"));
-boardDAO dao = new boardDAO(application);
-boardDTO dto = dao.selectView(num);
+noticeDAO dao = new noticeDAO(application);
+noticeDTO dto = dao.selectView(num);
 String sessionId = session.getAttribute("UserId").toString();
 if(!sessionId.equals(dto.getId())){
 	JSFunction.alertBack("작성자 본인만 수정할 수 있습니다.", out);
@@ -34,10 +34,9 @@ dao.close();
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<link rel="stylesheet" href="../Common/Nav.css">
 
 <h2>회원제 게시판 - 수정하기</h2>
-<form name="writeFrm" method="post" action="EditProcess.jsp" onsubmit="return valudateForm(this);">
+<form name="writeFrm" method="post" action="NoticeEditProcess.jsp" onsubmit="return valudateForm(this);">
 	<input type="hidden" name="num" value="<%= dto.getNum() %>" />
 	<table border="1" width="90%">
 		<tr>
@@ -56,7 +55,7 @@ dao.close();
 			<td colspan="2" align="center">
 				<button type="submit">작성 완료</button>
 				<button type="reset">다시 입력</button>
-				<button type="button" onclick="location.href='FreeBoardList.jsp';">목록 보기</button>
+				<button type="button" onclick="location.href='FreenoticeList.jsp';">목록 보기</button>
 			</td>	
 		</tr>
 	</table>

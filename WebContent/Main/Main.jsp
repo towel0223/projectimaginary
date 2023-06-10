@@ -12,7 +12,6 @@
 <head>
 <meta charset="UTF-8">
 <title>당신의 플레이리스트, YM</title>
-<link rel="stylesheet" href="../Common/Nav.css">
 <link rel="stylesheet" href="./Main.css">
 </head>
 <script type="text/javascript">
@@ -44,8 +43,8 @@
 	</section>
 	
 	<div id="banner">
-		<img alt="행사 배너" src="../images/행사 배너.jpg">
-		<img alt="행사 배너" src="../images/행사 배너2.jpg">
+		<a href="https://youtu.be/AQEMCVrT6sc"><img alt="행사 배너" src="../images/행사 배너.jpg"></a>
+		<a href="https://linktr.ee/hpf2023?src=hp"><img alt="행사 배너" src="../images/행사 배너2.jpg"></a>
 	</div>
 	
 	<div class="personal_recommend_w">
@@ -78,24 +77,24 @@
 		
 		<div class="album_list">
 			<div class="album_list1">
-				<img src="../images/기타치는물고기.jpg">
-				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+				<img src="../images/기타치는물고기2.jpg">
+				<h4>모태솔로</h4><h5>기타치는 물고기</h5>
 			</div>
 			<div class="album_list1">
-				<img src="../images/기타치는물고기.jpg">
-				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+				<img src="../images/기타치는물고기2.jpg">
+				<h4>모태솔로</h4><h5>기타치는 물고기</h5>
 			</div>
 			<div class="album_list1">
-				<img src="../images/기타치는물고기.jpg">
-				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+				<img src="../images/기타치는물고기2.jpg">
+				<h4>모태솔로</h4><h5>기타치는 물고기</h5>
 			</div>
 			<div class="album_list1">
-				<img src="../images/기타치는물고기.jpg">
-				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+				<img src="../images/기타치는물고기2.jpg">
+				<h4>모태솔로</h4><h5>기타치는 물고기</h5>
 			</div>
 			<div class="album_list1">
-				<img src="../images/기타치는물고기.jpg">
-				<h4>우리아빠는 슈퍼맨</h4><h5>기타치는 물고기</h5>
+				<img src="../images/기타치는물고기2.jpg">
+				<h4>모태솔로</h4><h5>기타치는 물고기</h5>
 			</div>
 		</div>
 	</div>

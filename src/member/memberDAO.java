@@ -153,6 +153,7 @@ public class memberDAO extends JDBConnect  {
 		      psmt.setString(1, newPass);
 		      psmt.setString(2, newNickname);
 		      psmt.setString(3, newTel);
+		      psmt.setString(4, memberId);
 
 		      int rs = psmt.executeUpdate();
 		      psmt.close();

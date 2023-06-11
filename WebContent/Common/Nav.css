@@ -1,1 +1,158 @@
 @charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+@import
+	url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0px solid silver;
+}
+
+img {
+	width: 100px;
+}
+body,html{
+	background-color: #e9e9e9; 
+}
+body {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+	font-size: 16px;
+	line-height: 1rem;
+	color: #333;
+	letter-spacing: -0.3px;
+	font-weight: 400;
+}
+
+a:link {
+	text-decoration: none;
+	color: rgb(255, 255, 255)fff;
+}
+
+a:visited {
+	color: rgb(255, 255, 255);
+}
+
+a:hover {
+	color: rgb(255, 255, 128);
+}
+
+a:active {
+	color: rgb(255, 255, 255);
+}
+
+ul, li {
+	list-style: none;
+}
+
+img {
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+}
+
+.header_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  
+  border-radius: 10px;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo a {
+  display: inline-block;
+}
+
+.logo img {
+  width: 200px;
+  height: 40px;
+}
+
+.search_box {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search_box img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.search_box input[type="text"] {
+  width: 500px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.sub_menu {
+  list-style: none;
+  display: flex;
+}
+
+.sub_menu li {
+  margin-right: 10px;
+}
+
+.sub_menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  height: 100%;
+}
+

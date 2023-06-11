@@ -50,6 +50,7 @@ dao.close();
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
+<link rel="stylesheet" href="../Common/Nav.css">
 
 <form name="writeFrm">
      <input type="hidden" name="num" value="<%=dto.getNum() %>" />  <!-- 공통 링크 -->

@@ -1,15 +1,14 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="board.boardDTO" %>
-<%@ page import="board.boardDAO" %>
-
+<%@ page import="notice.noticeDTO" %>
+<%@ page import="notice.noticeDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 // 게시물 목록 받아오기
 // DAO를 생성해 DB에 연결
-boardDAO dao = new boardDAO(application);
+noticeDAO dao = new noticeDAO(application);
 
 // 사용자가 입력한 검색 조건을 Map에 저장
 Map<String, Object> param = new HashMap<String, Object>();
@@ -23,7 +22,7 @@ if(searchWord != null){
  
 int totalCount = dao.selectCount(param);  // 게시물 수 확인
  
-List<boardDTO> boardLists = dao.selectList(param);  // 게시물 목록 받기
+List<noticeDTO> boardLists = dao.selectList(param);  // 게시물 목록 받기
 dao.close();  // DB 연결 닫기
 
 %>
@@ -31,14 +30,14 @@ dao.close();  // DB 연결 닫기
 <html>
 <head>
 <meta charset="UTF-8">
-<title>요시뮤직 자유게시판</title>
+<title>요시뮤직 공지사항</title>
 </head>
 <body>
-	<jsp:include page="../Common/Nav.jsp" />
-	<h2>자유게시판</h2>
-	
-	<!-- 검색폼 --> 
-    <form method="get">  
+<jsp:include page="../Common/Nav.jsp" />
+
+<h2>공지사항</h2>
+
+<form method="get">  
             <select name="searchField"> 
                 <option value="title">제목</option> 
                 <option value="content">내용</option>
@@ -50,25 +49,23 @@ dao.close();  // DB 연결 닫기
 	<table border="1" width="90%">
         <!-- 각 칼럼의 이름 --> 
         <tr>
-            <th width="8%">번호</th>
-            <th width="40%">제목</th>
+            <th width="10%">번호</th>
+            <th width="50%">제목</th>
             <th width="15%">작성자</th>
-            <th width="8%">조회수</th>
-            <th width="10%">작성일</th>
-            <th width="8%">좋아요</th>
-            <th width="6%"></th>
+            <th width="10%">조회수</th>
+            <th width="15%">작성일</th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
 		if (boardLists.isEmpty()) {// 게시물이 하나도 없을 때 
 		%>
 		        <tr>
-		            <td colspan="5" align="center"> 등록된 게시물이 없습니다^^* </td>
+		            <td colspan="5" align="center"> 등록된 공지사항이 없습니다^^* </td>
 		        </tr>
 		<%
 		} else {// 게시물이 있을 때
 		    // int virtualNum = 0;  // 화면상에서의 게시물 번호
-		    for (boardDTO dto : boardLists)
+		    for (noticeDTO dto : boardLists)
 		    {
 		        // virtualNum = totalCount--;  // 전체 게시물 수에서 시작해 1씩 감소
 		%>
@@ -80,8 +77,6 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getId() %></td>          <!--작성자 아이디-->
 		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
-		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
-		            <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
 		        </tr>
 		<%
 		    }
@@ -89,10 +84,12 @@ dao.close();  // DB 연결 닫기
 		%>
 	</table>
 	<!-- 목록 하단의 [글쓰기] 버튼 -->
+	<%if(session.getAttribute("UserId") == "yoshi"){ %>
 	<table border="1" width="90%">
 		<tr align="right">
-			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
+			<td><button type="button" onclick="location.href='NoticeWrite.jsp';">글쓰기</button></td>
 		</tr>
 	</table>
+	<%} %>
 </body>
 </html>

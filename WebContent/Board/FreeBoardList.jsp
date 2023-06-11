@@ -3,6 +3,7 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="board.boardDTO" %>
 <%@ page import="board.boardDAO" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -49,11 +50,13 @@ dao.close();  // DB 연결 닫기
 	<table border="1" width="90%">
         <!-- 각 칼럼의 이름 --> 
         <tr>
-            <th width="10%">번호</th>
-            <th width="50%">제목</th>
+            <th width="8%">번호</th>
+            <th width="40%">제목</th>
             <th width="15%">작성자</th>
-            <th width="10%">조회수</th>
-            <th width="15%">작성일</th>
+            <th width="8%">조회수</th>
+            <th width="10%">작성일</th>
+            <th width="8%">좋아요</th>
+            <th width="6%"></th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -77,6 +80,8 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getId() %></td>          <!--작성자 아이디-->
 		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
+		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
+		            <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
 		        </tr>
 		<%
 		    }

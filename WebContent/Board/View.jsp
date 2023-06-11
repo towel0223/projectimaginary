@@ -1,11 +1,22 @@
 <%@ page import="board.boardDAO" %>
 <%@ page import="board.boardDTO" %>
+<%@ page import="comments.commentsDAO" %>
+<%@ page import="comments.commentsDTO" %>
+<%@ page import="member.memberDAO" %>
+<%@ page import="member.memberDTO" %>
+<%@ page import="like.likeDTO" %>
+<%@ page import="like.likeDAO" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 int num = Integer.parseInt(request.getParameter("num"));
 
 boardDAO dao = new boardDAO(application);
+commentsDAO cdao = new commentsDAO(application);
+likeDAO ldao = new likeDAO(application);
+memberDAO mdao = new memberDAO(application);
+memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"));
 dao.updateVisitCount(num);
 boardDTO dto = dao.selectView(num);
 dao.close();
@@ -24,6 +35,15 @@ dao.close();
 			form.method = "post";
 			form.action = "DeleteProcess.jsp";
 			form.submit();
+		}
+	}
+</script>
+<script type="text/javascript">
+	function validateForm(form){
+		if(form.content.value == ""){
+			alert("내용을 입력하세요.");
+			form.content.focus();
+			return false;
 		}
 	}
 </script>
@@ -70,5 +90,48 @@ dao.close();
      	</tr>
      </table>
 </form>
+<table>
+  <tr>
+	<td align="left" bgcolor="skyblue">댓글</td>
+  </tr>
+</table>
+<form name="CommentFrm" method="post" action="../Comments/InsertComments.jsp" onsubmit="return validateForm(this);">
+  <%if(session.getAttribute("UserId") != null) {%>
+  <%=mdto.getNickname() %><textarea name="Ccontent" style="width: 88%; height: 50px;" placeholder="댓글 작성"></textarea>
+  <button type="submit">댓글쓰기</button>
+  <input type="hidden" name="num" value="<%=dto.getNum() %>">
+  <%} %>
+</form>
+
+
+<% 
+List<commentsDTO> commentList = cdao.getCommentList(num); // 댓글 리스트 가져오기
+
+for (commentsDTO comment : commentList) { //댓글 리스트
+%>
+    <div>
+    	<ul>
+        	<li>작성자: <%= comment.getNickName() %>
+       	 	<li>내용: <%= comment.getContent() %>
+        	<li>작성일: <%= comment.getPostdate() %>
+        	<li> 좋아요: <%=comment.getLikes() %> 
+        </ul>
+      <%   int likeCheck = ldao.likeCheck((String)session.getAttribute("UserId"), comment.getNum()); //좋아요 확인 %>
+    <%if(likeCheck == 0){ %>
+        <%if(session.getAttribute("UserId") != null) {%>
+        <a href="../Comments/CommentsLike.jsp?num=<%=comment.getNum() %>&boardNum=<%=dto.getNum() %>"><button class="<%=comment.getNum() %>">좋아요</button></a>
+        <%} 
+    }else{
+        %>
+        <%if(session.getAttribute("UserId") != null) {%>
+        <a href="../Comments/CommentsLike.jsp?num=<%=comment.getNum() %>&boardNum=<%=dto.getNum() %>"><button class="<%=comment.getNum() %>">좋아요 취소</button></a>
+        <%} 
+    }
+        %>
+    </div>
+<%
+}
+%>
+
 </body>
 </html>

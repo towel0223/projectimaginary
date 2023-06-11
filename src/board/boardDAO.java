@@ -1,5 +1,6 @@
 package board;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -231,4 +232,62 @@ public class boardDAO extends JDBConnect  {
         
         return result; // 결과 반환
     }
+    
+	public int PlusLike(int num) { //좋아요 1 증가
+	    int result = 0;
+	    try {
+	        String sql = "UPDATE board SET likes = likes + 1 WHERE num = ?";
+	        psmt = con.prepareStatement(sql);
+	        psmt.setInt(1, num);
+
+	        result = psmt.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        // 리소스를 정리하는 부분
+	    	try {
+	            if (psmt != null) {
+	                psmt.close();
+	            }
+	            if (con != null) {
+	                con.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return result;
+	}
+	
+	public int MinusLike(int num) { // 좋아요 1 감소
+	    int result = 0;
+	    try {
+	        String sql = "UPDATE board SET likes = likes - 1 WHERE num = ?";
+	        psmt = con.prepareStatement(sql);
+	        psmt.setInt(1, num);
+
+	        result = psmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        // 리소스를 정리하는 부분
+	        try {
+	            if (psmt != null) {
+	                psmt.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }finally {
+				// 리소스를 정리하는 부분
+				try {
+					if (psmt != null) {
+		                psmt.close();
+		            }
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+	    }
+	    return result;
+	}
 }

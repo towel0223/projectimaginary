@@ -87,5 +87,6 @@ function checkAll(form){
 			<span id="telError" style="color:red"></span>
 	<input type="submit" value="회원수정">
 </form>
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

@@ -7,6 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("utf-8");
 // 게시물 목록 받아오기
 // DAO를 생성해 DB에 연결
 boardDAO dao = new boardDAO(application);
@@ -32,6 +33,7 @@ dao.close();  // DB 연결 닫기
 <head>
 <meta charset="UTF-8">
 <title>요시뮤직 자유게시판</title>
+<link rel="stylesheet" href="./FreeBoardList.css">
 </head>
 <body>
 	<jsp:include page="../Common/Nav.jsp" />
@@ -56,7 +58,6 @@ dao.close();  // DB 연결 닫기
             <th width="8%">조회수</th>
             <th width="10%">작성일</th>
             <th width="8%">좋아요</th>
-            <th width="6%"></th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -82,8 +83,13 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
 		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
+<<<<<<< HEAD
 		            <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
 		            <% }%>
+=======
+                  <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
+                  <% }%>
+>>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
 		        </tr>
 		<%
 		    }
@@ -96,5 +102,6 @@ dao.close();  // DB 연결 닫기
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
 		</tr>
 	</table>
+	<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

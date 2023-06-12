@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 1484px;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #eaf6ff;
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2, form{
+	margin-left: 210px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+select,
+input[type="text"],
+input[type="submit"] {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+select {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional styles for search field highlight */
+input[type="text"]:focus {
+  outline: 2px solid #4caf50;
+}

@@ -26,6 +26,7 @@ dao.close();
 <head>
 <meta charset="UTF-8">
 <title>회원제 게시판</title>
+<link rel="stylesheet" href="./View.css">
 <script type="text/javascript">
 	function deletePost() {
 		var confirmed = confirm("정말로 삭제하시겠습니까?");
@@ -50,7 +51,6 @@ dao.close();
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<link rel="stylesheet" href="../Common/Nav.css">
 
 <form name="writeFrm">
      <input type="hidden" name="num" value="<%=dto.getNum() %>" />  <!-- 공통 링크 -->
@@ -133,6 +133,6 @@ for (commentsDTO comment : commentList) { //댓글 리스트
 <%
 }
 %>
-
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

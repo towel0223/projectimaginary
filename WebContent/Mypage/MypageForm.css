@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input[type="button"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+input[type="button"]:focus {
+  outline: 2px solid #4caf50;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.info label {
+  font-weight: bold;
+}
+
+.info span {
+  margin-left: 10px;
+}
+
+.del-btn {
+  background-color: #ff4136;
+}
+
+.del-btn:hover {
+  background-color: #d62c1a;
+}

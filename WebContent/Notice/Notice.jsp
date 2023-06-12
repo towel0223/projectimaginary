@@ -31,6 +31,7 @@ dao.close();  // DB 연결 닫기
 <head>
 <meta charset="UTF-8">
 <title>요시뮤직 공지사항</title>
+<link rel="stylesheet" href="./Notice.css">
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
@@ -72,7 +73,7 @@ dao.close();  // DB 연결 닫기
 		        <tr align="center">
 		            <td><%= dto.getNum() %></td>  <!--게시물 번호-->
 		            <td align="left">  <!--제목(+ 하이퍼링크)-->
-		                <a href="View.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %></a> 
+		                <a href="NoticeView.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %></a> 
 		            </td>
 		            <td align="center"><%= dto.getId() %></td>          <!--작성자 아이디-->
 		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
@@ -91,5 +92,6 @@ dao.close();  // DB 연결 닫기
 		</tr>
 	</table>
 	<%} %>
+	<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

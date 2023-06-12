@@ -9,23 +9,43 @@ body,html{
   height: 300px;
   padding: 30px;
   gap:18px;
+  padding-bottom:0px;
 }
 
 #banner img {
   max-width: 1000px;
   max-height: 100%;
-  width: 490px;
+  width: 518px;
   height: 100%;
 }
 
+#banner2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  padding: 30px;
+  gap:18px;
+}
+
+#banner2 img {
+  max-width: 1000px;
+  max-height: 100%;
+  width: 250px;
+  height: 100%;
+}
+
+
+
 .personal_recommend_w {
-  background-color: #4D426E;
+  background-color: #E3E3E3;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 30px;
   width: 1000px;
   margin: 0 auto;
-  color: white;
+  color: black;
+  margin-bottom: 30px;
 }
 
 .personal_recommend_head {
@@ -57,4 +77,42 @@ body,html{
 
 .album_list1 h5{
 	color: #757081;
+}
+
+
+
+.platform {
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  padding: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  color: black;
+}
+
+.platform_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.platform_head h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.platform_list{
+	margin-top: 60px;
+	display:flex;
+	justify-content:space-around;
+	
+}
+.platform_list1{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:5px;
+}
+.platform_list1 img{
+	width: 150px; height: 150px;
 }

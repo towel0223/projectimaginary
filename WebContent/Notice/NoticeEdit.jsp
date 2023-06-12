@@ -19,6 +19,7 @@ dao.close();
 <head>
 <meta charset="UTF-8">
 <title>회원제 게시판</title>
+<link rel="stylesheet" href="./NoticeEdit.css">
 <script type="text/javascript">
 	if(form.title.value == ""){
 		alert("제목을 입력하세요.");
@@ -60,5 +61,6 @@ dao.close();
 		</tr>
 	</table>
 </form>
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

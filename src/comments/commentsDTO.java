@@ -3,6 +3,7 @@ package comments;
 import java.sql.Date;
 
 public class commentsDTO {
+	private int num;
 	private int cnum;
 	private String id;
 	private String content;
@@ -11,6 +12,12 @@ public class commentsDTO {
 	private String nickName;
 	public commentsDTO() {
 		super();
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
 	}
 	public int getCnum() {
 		return cnum;
@@ -48,5 +55,4 @@ public class commentsDTO {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-
 }

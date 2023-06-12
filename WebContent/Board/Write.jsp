@@ -49,5 +49,6 @@
 		</tr>
 	</table>
 </form>
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

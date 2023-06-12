@@ -16,6 +16,7 @@ dao.close();
 <head>
 <meta charset="UTF-8">
 <title>MyPage</title>
+<link rel="stylesheet" href="./MypageForm.css">
 </head>
 <script>
   function delCheck() {
@@ -35,5 +36,6 @@ NICKNAME : <%=dto.getNickname() %><br/>
 TEL : <%=dto.getTel() %><br/>
 <input type="button" value="탈퇴" onClick="delCheck()">
 <input type="button" value="회원정보 수정" onclick="location='UpdateMember.jsp'">
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

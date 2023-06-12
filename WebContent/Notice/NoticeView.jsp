@@ -15,6 +15,7 @@ dao.close();
 <head>
 <meta charset="UTF-8">
 <title>회원제 게시판</title>
+<link rel="stylesheet" href="./NoticeView.css">
 <script type="text/javascript">
 	function deletePost() {
 		var confirmed = confirm("정말로 삭제하시겠습니까?");
@@ -70,5 +71,6 @@ dao.close();
      	</tr>
      </table>
 </form>
+<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>인기차트</title>
+<link rel="stylesheet" href="./Chart.css">
 </head>
 <body>
 	<jsp:include page="../Common/Nav.jsp" />
@@ -27,10 +28,10 @@
         <!-- 각 칼럼의 이름 --> 
         <tr>
             <th width="10%">순위</th>
-            <th width="50%">제목</th>
-            <th width="15%">앨범</th>
-            <th width="10%">아티스트</th>
-            <th width="15%">제작사</th>
+            <th width="30%">제목</th>
+            <th width="20%">앨범</th>
+            <th width="20%">아티스트</th>
+            <th width="20%">제작사</th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -56,6 +57,6 @@
 		        
 	</table>
 
-
+	<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

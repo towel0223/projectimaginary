@@ -1,178 +1,143 @@
 @charset "UTF-8";
 
-h2{
-	margin-top: 20px;
+/* RecommendedMusic.css */
+
+/* 전체 페이지 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
+/* 네비게이션 스타일 */
+.nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 16px;
+  float: left;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+/* 헤더 스타일 */
+h2 {
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 추천 음악 컨테이너 스타일 */
 .personal_recommend_w {
-  background-color: #4D426E;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
   width: 1000px;
   margin: 0 auto;
-  color: white;
-  margin-bottom: 30px;
+  margin-bottom:30px;
+  border-radius: 3%;
 }
 
 .personal_recommend_head {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.personal_recommend_head h4 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
+.personal_recommend_w h5,
+.personal_recommend h5 {
+  color: gray;
 }
-.album_list{
-	margin-top: 60px;
-	display:flex;
-	justify-content:space-around;
-	
-}
-.album_list1{
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	gap:5px;
-}
-.album_list1 img{
-	width: 150px; height: 150px;
-}
-
-.album_list1 h5{
-	color: #757081;
+.personal_recommend_w2 h5,
+.personal_recommend_w3 h5,
+.personal_recommend_w4 h5{
+	color: gray;
 }
 
 
+.total_status_data {
+  color: #666;
+}
 
-.personal_recommend_w2 {
-  background-color: #70AADE;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+.album_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.album_list1 {
+  text-align: center;
+  width: 20%;
+}
+
+.album_list1 img {
+  width: 190px;
+  height: 190px;
+}
+
+.album_list1 h4, .album_list1 h5 {
+  margin: 5px 0;
+}
+
+/* 역주행 곡 스타일 */
+.personal_recommend_w2, .personal_recommend_w3, .personal_recommend_w4 {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
   width: 1000px;
   margin: 0 auto;
-  color: white;
   margin-bottom: 30px;
+  border-radius: 3%;
 }
 
-.personal_recommend_head2 {
+.personal_recommend_head2, .personal_recommend_head3, .personal_recommend_head4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.personal_recommend_head2 h4 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-}
-.album_list3{
-	margin-top: 60px;
-	display:flex;
-	justify-content:space-around;
-	
-}
-.album_list4{
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	gap:5px;
-}
-.album_list4 img{
-	width: 150px; height: 150px;
+.total_status_data2, .total_status_data3, .total_status_data4 {
+  color: #666;
 }
 
-.album_list4 h5{
-	color: #757081;
-}
-
-
-
-.personal_recommend_w3 {
-  background-color: #8AD57F;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 1000px;
-  margin: 0 auto;
-  color: white;
-  margin-bottom: 30px;
-}
-
-.personal_recommend_head3 {
+.album_list3, .album_list5, .album_list7 {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.personal_recommend_head3 h4 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-}
-.album_list5{
-	margin-top: 60px;
-	display:flex;
-	justify-content:space-around;
-	
-}
-.album_list6{
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	gap:5px;
-}
-.album_list6 img{
-	width: 150px; height: 150px;
+.album_list4, .album_list6, .album_list8 {
+  text-align: center;
+  width: 20%;
 }
 
-.album_list6 h5{
-	color: #757081;
+.album_list4 img, .album_list6 img, .album_list8 img {
+  width: 190px;
+  height: 190px;
 }
 
-
-
-.personal_recommend_w4 {
-  background-color: #D6E151;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 1000px;
-  margin: 0 auto;
-  color: white;
+.album_list4 h4, .album_list4 h5, .album_list6 h4, .album_list6 h5, .album_list8 h4, .album_list8 h5 {
+  margin: 5px 0;
 }
 
-.personal_recommend_head4 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 링크 스타일 */
+a {
+  color: #333;
+  text-decoration: none;
 }
 
-.personal_recommend_head4 h4 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-}
-.album_list7{
-	margin-top: 60px;
-	display:flex;
-	justify-content:space-around;
-	
-}
-.album_list8{
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	gap:5px;
-}
-.album_list8 img{
-	width: 150px; height: 150px;
-}
-
-.album_list8 h5{
-	color: #757081;
+a:hover {
+  text-decoration: underline;
 }

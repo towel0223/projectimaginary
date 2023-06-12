@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 20px auto;
+}
+
+td {
+  padding: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+textarea {
+  width: 88%;
+  height: 50px;
+  resize: vertical;
+}
+
+.comment-container {
+  margin-top: 20px;
+}
+
+.comment {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment li {
+  margin-bottom: 5px;
+}
+
+.comment .like-button {
+  display: inline-block;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.comment .like-button:hover {
+  background-color: #999;
+}

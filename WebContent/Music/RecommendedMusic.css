@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+h2{
+	margin-top: 20px;
+}
+
+.personal_recommend_w {
+  background-color: #4D426E;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.personal_recommend_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal_recommend_head h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.album_list{
+	margin-top: 60px;
+	display:flex;
+	justify-content:space-around;
+	
+}
+.album_list1{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:5px;
+}
+.album_list1 img{
+	width: 150px; height: 150px;
+}
+
+.album_list1 h5{
+	color: #757081;
+}
+
+
+
+.personal_recommend_w2 {
+  background-color: #70AADE;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.personal_recommend_head2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal_recommend_head2 h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.album_list3{
+	margin-top: 60px;
+	display:flex;
+	justify-content:space-around;
+	
+}
+.album_list4{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:5px;
+}
+.album_list4 img{
+	width: 150px; height: 150px;
+}
+
+.album_list4 h5{
+	color: #757081;
+}
+
+
+
+.personal_recommend_w3 {
+  background-color: #8AD57F;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.personal_recommend_head3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal_recommend_head3 h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.album_list5{
+	margin-top: 60px;
+	display:flex;
+	justify-content:space-around;
+	
+}
+.album_list6{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:5px;
+}
+.album_list6 img{
+	width: 150px; height: 150px;
+}
+
+.album_list6 h5{
+	color: #757081;
+}
+
+
+
+.personal_recommend_w4 {
+  background-color: #D6E151;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  color: white;
+}
+
+.personal_recommend_head4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal_recommend_head4 h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.album_list7{
+	margin-top: 60px;
+	display:flex;
+	justify-content:space-around;
+	
+}
+.album_list8{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:5px;
+}
+.album_list8 img{
+	width: 150px; height: 150px;
+}
+
+.album_list8 h5{
+	color: #757081;
+}

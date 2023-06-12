@@ -10,8 +10,7 @@
 			<a href="../Main/Main.jsp"><img src="../images/logo.png"></a>
 		</div>
 		<div class="search_box">
-			<img src="https://imgur.com/dYH02M1.png"> <input type="text"
-				placeholder="검색어를 입력하세요.">
+			<img src="https://imgur.com/dYH02M1.png"> <input type="text" placeholder="검색어를 입력하세요.">
 		</div>
 		
 		<ul class="sub_menu">
@@ -35,8 +34,8 @@
 		<nav>
 			<ul>
 				<li><a href="../Board/FreeBoardList.jsp">자유게시판</a></li>
-				<li><a href="#">인기차트</a></li>
-				<li><a href="#">추천음악</a></li>
+				<li><a href="../Music/Chart.jsp">인기차트</a></li>
+				<li><a href="../Music/RecommendedMusic.jsp">추천음악</a></li>
 				<li><a href="../Mypage/MypageForm.jsp">마이페이지</a></li>
 				<li><a href="../Notice/Notice.jsp">공지사항</a></li>
 			</ul>

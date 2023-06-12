@@ -26,7 +26,7 @@ dao.close();
             <th>가수</th>
             <th>발매일</th>
         </tr>
-        <% for (songDTO song : SongList) { %>
+        <% for (songDTO song : SongList) { //리스트 출력%> 
             <tr>
                 <td><%= song.getSnum() %></td>
                 <td><img src="../images/<%=song.getSphoto() %>" alt="사진" width="70px" height="70px"/></td>

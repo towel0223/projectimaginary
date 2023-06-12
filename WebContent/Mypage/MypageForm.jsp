@@ -11,6 +11,7 @@ memberDTO dto = dao.getMemberDTO(SessionId);
 dao.close();
 %>
 <link rel="stylesheet" href="../Common/Nav.css">
+<link rel="stylesheet" href="Mypage.css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +29,34 @@ dao.close();
 </script>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<h2>내정보</h2>
-ID : <%=dto.getId() %><br/>
-NAME : <%=dto.getName() %><br/>
-NICKNAME : <%=dto.getNickname() %><br/>
-TEL : <%=dto.getTel() %><br/>
-<input type="button" value="탈퇴" onClick="delCheck()">
-<input type="button" value="회원정보 수정" onclick="location='UpdateMember.jsp'">
+<div class = "title">
+		<h2>내정보</h2>
+</div>
+<div class = "container">
+<div class="info">
+  <label>ID</label><br>
+  <span><%=dto.getId() %></span>
+</div>
+
+<div class="info">
+  <label>NAME</label><br>
+  <span><%=dto.getName() %></span>
+</div>
+
+<div class="info">
+  <label>NICKNAME</label><br>
+  <span><%=dto.getNickname() %></span>
+</div>
+
+<div class="info">
+  <label>TEL</label><br>
+  <span><%=dto.getTel() %></span>
+</div>
+
+<div class="button-group">
+  <input type="button" value="탈퇴" class="btn" onClick="delCheck()">
+  <input type="button" value="회원정보 수정" class="btn" onclick="location='UpdateMember.jsp'">
+</div>
+</div>
 </body>
 </html>

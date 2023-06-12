@@ -14,27 +14,6 @@
 <title>당신의 플레이리스트, YM</title>
 <link rel="stylesheet" href="./Main.css">
 </head>
-<script type="text/javascript">
-	function submitForm(value) {
-		var form = document.createElement("form");
-		form.method = "POST";
-		form.action = "../Music/SearchMusic.jsp";
-		var input = document.createElement("input");
-		input.type = "hidden";
-		input.name = "value";
-		input.value = value;
-		form.appendChild(input);
-		document.body.appendChild(form);
-		form.submit();
-	}
-
-	function handleKeyPress(event) {
-		if (event.keyCode === 13) {
-			var value = document.getElementById("searchWord").value;
-			submitForm(value);
-		}
-	}
-</script>
 <body>
 	<jsp:include page="../Common/Nav.jsp" />
 	

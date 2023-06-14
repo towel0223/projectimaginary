@@ -18,7 +18,7 @@ public class noticeDAO extends JDBConnect{
 	
 	public noticeDTO getNoticeDTO(int num){
 		noticeDTO dto = new noticeDTO();
-		String sql="select * from board where num=?";
+		String sql="select * from notice where num=?";
 		try {
 			psmt=con.prepareStatement(sql);
 			psmt.setInt(1, num);
@@ -44,7 +44,7 @@ public class noticeDAO extends JDBConnect{
         int totalCount = 0; // 결과(게시물 수)를 담을 변수
 
         // 게시물 수를 얻어오는 쿼리문 작성
-        String query = "SELECT COUNT(*) FROM board";
+        String query = "SELECT COUNT(*) FROM notice";
         if(map.get("searchWord") != null) {
         	query += " WHERE " + map.get("searchField") + " "
         			+ " LIKE '%" + map.get("searchWord") + "%'";
@@ -67,7 +67,7 @@ public class noticeDAO extends JDBConnect{
 	public List<noticeDTO> selectList(Map<String, Object> map) { 
         List<noticeDTO> bbs = new Vector<noticeDTO>();  // 결과(게시물 목록)를 담을 변수
 
-        String query = "SELECT * FROM board "; 
+        String query = "SELECT * FROM notice "; 
         //조건 설정
         if(map.get("searchword") != null) {
         	query += " where " + map.get("searchField") + " " + " like '%" + map.get("searchWord") + "%' "; 
@@ -106,10 +106,10 @@ public class noticeDAO extends JDBConnect{
         
         try {
             // INSERT 쿼리문 작성 
-            String query = "INSERT INTO board ( "
+            String query = "INSERT INTO notice ( "
                          + " num,title,content,id,visitcount) "
                          + " VALUES ( "
-                         + " seq_board_num.NEXTVAL, ?, ?, ?, 0)";  
+                         + " seq_notice_num.NEXTVAL, ?, ?, ?, 0)";  
 
             psmt = con.prepareStatement(query);  // 동적 쿼리 
             psmt.setString(1, dto.getTitle());  
@@ -133,7 +133,7 @@ public class noticeDAO extends JDBConnect{
         
         // 쿼리문 준비
         String query = "SELECT B.*, M.name " 
-                     + " FROM member M INNER JOIN board B " 
+                     + " FROM member M INNER JOIN notice B " 
                      + " ON M.id=B.id "
                      + " WHERE num=?";
 
@@ -163,7 +163,7 @@ public class noticeDAO extends JDBConnect{
     // 지정한 게시물의 조회수를 1 증가시킵니다.
     public void updateVisitCount(int num) { 
         // 쿼리문 준비 
-        String query = "UPDATE board SET "
+        String query = "UPDATE notice SET "
                      + " visitcount=visitcount+1 "
                      + " WHERE num=?";
         
@@ -184,7 +184,7 @@ public class noticeDAO extends JDBConnect{
         
         try {
             // 쿼리문 템플릿 
-            String query = "UPDATE board SET "
+            String query = "UPDATE notice SET "
                          + " title=?, content=? "
                          + " WHERE num=?";
             
@@ -211,7 +211,7 @@ public class noticeDAO extends JDBConnect{
 
         try {
             // 쿼리문 템플릿
-            String query = "DELETE FROM board WHERE num=?"; 
+            String query = "DELETE FROM notice WHERE num=?"; 
 
             // 쿼리문 완성
             psmt = con.prepareStatement(query); 

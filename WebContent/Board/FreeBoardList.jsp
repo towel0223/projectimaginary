@@ -83,13 +83,8 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
 		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
-<<<<<<< HEAD
 		            <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
 		            <% }%>
-=======
-                  <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
-                  <% }%>
->>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
 		        </tr>
 		<%
 		    }

@@ -4,7 +4,6 @@
 <html>
 <head></head>
 <script type="text/javascript">
-<<<<<<< HEAD
 	function submitForm(value) {
 		var form = document.createElement("form");
 		form.method = "POST";
@@ -24,27 +23,6 @@
 			submitForm(value);
 		}
 	}
-=======
-   function submitForm(value) {
-      var form = document.createElement("form");
-      form.method = "POST";
-      form.action = "../Music/SearchMusic.jsp";
-      var input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "value";
-      input.value = value;
-      form.appendChild(input);
-      document.body.appendChild(form);
-      form.submit();
-   }
-
-   function handleKeyPress(event) {
-      if (event.keyCode === 13) {
-         var value = document.getElementById("searchWord").value;
-         submitForm(value);
-      }
-   }
->>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
 </script>
 <body>
 <header>
@@ -53,23 +31,14 @@
 			<a href="../Main/Main.jsp"><img src="../images/logo.png"></a>
 		</div>
 		<div class="search_box"> 
-<<<<<<< HEAD
 			<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)">
 <input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="handleKeyPress(event)"> 
 <!-- 이미지 클릭하거나 enter를 누르면 검색 -->
 		</div>
-		
-		<ul class="sub_menu">
-			<li><a href="https://www.youtube.com/channel/UCRPiGd-HzA4qExOgzlOcSrQ">공식 SNS</a></li>
-=======
-        	<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)">
-			<input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="handleKeyPress(event)"> 
-			<!-- 이미지 클릭하거나 enter를 누르면 검색 -->
-      </div>
+      
 		
 		<ul class="sub_menu">
 			<li><a href="https://www.youtube.com/channel/UCRPiGd-HzA4qExOgzlOcSrQ">공식SNS</a></li>
->>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
 
 			<% 
 				// 로그인 시 로그아웃 글자가 뜨게끔 설정
@@ -85,7 +54,7 @@
 			%>
 			<li><a href="../Membership/yMembership.jsp">회원가입</a></li>
 		</ul>
-	</div>
+		</div>
 		<nav>
 			<ul>
 				<li><a href="../Board/FreeBoardList.jsp">자유게시판</a></li>

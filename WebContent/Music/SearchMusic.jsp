@@ -30,26 +30,22 @@ dao.close();
     <table border="1" width="90%">
         <tr>
             <th width="10%">번호</th>
-            <th width="30%">제목</th>
             <th width="20%">앨범</th>
+            <th width="30%">제목</th>
             <th width="20%">아티스트</th>
-            <th width="20%">제작사</th>
+            <th width="20%">발매일</th>
         </tr>
-<<<<<<< HEAD
-        <% for (songDTO song : SongList) { //리스트 출력%> 
-=======
-        <% for (int i=0; i<100; i++) {
-        		if(title[i] == SearchWord || album[i] == SearchWord || artist[i] == SearchWord || maker[i] == SearchWord){%>
->>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
-            <tr>
-                <td><%= i+1 %></td>
-                <td><%= title[i] %></td>
-                <td><%= album[i] %></td>
-                <td><%= artist[i] %></td>
-                <td><%= maker[i] %></td>
-            </tr>
-        <% }
-        } %>
+
+        <% for (songDTO Song : SongList) { //리스트 출력%> 
+        	<tr>
+					<td><%=Song.getSnum() %></td>
+					<td><img src="../images/<%=Song.getSphoto() %>"></td>
+					<td><%=Song.getStitle() %></td>
+					<td><%=Song.getSname() %></td>
+					<td><%=Song.getSdate() %></td>
+			</tr>
+		
+      <%} %>
     </table>
     <jsp:include page="../Common/Footer.jsp" />
 </body>

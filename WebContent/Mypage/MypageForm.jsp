@@ -30,7 +30,7 @@ dao.close();
 </script>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<<<<<<< HEAD
+
 <div class = "title">
 		<h2>내정보</h2>
 </div>
@@ -60,15 +60,6 @@ dao.close();
   <input type="button" value="회원정보 수정" class="btn" onclick="location='UpdateMember.jsp'">
 </div>
 </div>
-=======
-<h2>내정보</h2>
-ID : <%=dto.getId() %><br/>
-NAME : <%=dto.getName() %><br/>
-NICKNAME : <%=dto.getNickname() %><br/>
-TEL : <%=dto.getTel() %><br/>
-<input type="button" value="탈퇴" onClick="delCheck()">
-<input type="button" value="회원정보 수정" onclick="location='UpdateMember.jsp'">
-<jsp:include page="../Common/Footer.jsp" />
->>>>>>> 8280fd044c775aee1261a34a12a0b5b561f6a5d8
+
 </body>
 </html>

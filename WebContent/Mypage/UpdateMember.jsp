@@ -17,7 +17,7 @@ dao.close();
 function checkAll(form){
 	var passError = document.getElementById("passError");//비밀번호 에러
 	var nicError = document.getElementById("nicError");//닉네임 에러
-	var regPass = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^*&~])[a-zA-Z\d!@#$%^*&~]{8,25}$/;//비밀번호 유효성 검사(정규식)
+	var regPass = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^*&~])[a-zA-Z\d!@#$%^*&~]{8,25}$/;//비밀번호 유효성 검사(정규식)
 	var regTel1=/^[0-9]{4}$/;//전화번호 앞자리 유효성 검사(정규식)
 	var regTel2=/^[0-9]{4}$/;//전화번호 뒷자리 유효성 검사(정규식)
 	var check = true;

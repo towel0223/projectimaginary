@@ -4,25 +4,25 @@
 <html>
 <head></head>
 <script type="text/javascript">
-   function submitForm(value) {
-      var form = document.createElement("form");
-      form.method = "POST";
-      form.action = "../Music/SearchMusic.jsp";
-      var input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "value";
-      input.value = value;
-      form.appendChild(input);
-      document.body.appendChild(form);
-      form.submit();
-   }
+	function submitForm(value) {
+		var form = document.createElement("form");
+		form.method = "POST";
+		form.action = "../Music/SearchMusic.jsp";
+		var input = document.createElement("input");
+		input.type = "hidden";
+		input.name = "value";
+		input.value = value;
+		form.appendChild(input);
+		document.body.appendChild(form);
+		form.submit();
+	}
 
-   function handleKeyPress(event) {
-      if (event.keyCode === 13) {
-         var value = document.getElementById("searchWord").value;
-         submitForm(value);
-      }
-   }
+	function handleKeyPress(event) {
+		if (event.keyCode === 13) {
+			var value = document.getElementById("searchWord").value;
+			submitForm(value);
+		}
+	}
 </script>
 <body>
 <header>
@@ -31,10 +31,11 @@
 			<a href="../Main/Main.jsp"><img src="../images/logo.png"></a>
 		</div>
 		<div class="search_box"> 
-        	<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)">
-			<input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="handleKeyPress(event)"> 
-			<!-- 이미지 클릭하거나 enter를 누르면 검색 -->
-      </div>
+			<img src="https://imgur.com/dYH02M1.png" onclick="submitForm(document.getElementById('searchWord').value)">
+<input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="handleKeyPress(event)"> 
+<!-- 이미지 클릭하거나 enter를 누르면 검색 -->
+		</div>
+      
 		
 		<ul class="sub_menu">
 			<li><a href="https://www.youtube.com/channel/UCRPiGd-HzA4qExOgzlOcSrQ">공식SNS</a></li>
@@ -53,7 +54,7 @@
 			%>
 			<li><a href="../Membership/yMembership.jsp">회원가입</a></li>
 		</ul>
-	</div>
+		</div>
 		<nav>
 			<ul>
 				<li><a href="../Board/FreeBoardList.jsp">자유게시판</a></li>

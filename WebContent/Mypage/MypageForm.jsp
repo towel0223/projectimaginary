@@ -31,6 +31,7 @@ dao.close();
 <body>
 <jsp:include page="../Common/Nav.jsp" />
 
+<div>
 <div class = "title">
 		<h2>내정보</h2>
 </div>
@@ -58,8 +59,12 @@ dao.close();
 <div class="button-group">
   <input type="button" value="탈퇴" class="btn" onClick="delCheck()">
   <input type="button" value="회원정보 수정" class="btn" onclick="location='UpdateMember.jsp'">
+  <%if(session.getAttribute("UserId")!=null&&session.getAttribute("UserId").equals("admin")){ %>
+  <input type="button" value="메인배너 수정" class="btn" onclick="location='../Manager/BannerEdit.jsp'">
+  <input type="button" value="추천음악 수정" class="btn" onclick="location='../Manager/RecommendedMusicEdit.jsp'">
+  <%} %>
 </div>
 </div>
-
+</div>
 </body>
 </html>

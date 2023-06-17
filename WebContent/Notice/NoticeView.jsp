@@ -59,7 +59,7 @@ dao.close();
      	<tr>
      		<td colspan="4" align="center">
      			<%
-     			if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals("yoshi")) {
+     			if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals("admin")) {
      			%>
      			<button type="button" onclick="location.href='NoticeEdit.jsp?num=<%=dto.getNum() %>';">수정하기</button>
      			<button type="button" onclick="deletePost();">삭제하기</button>

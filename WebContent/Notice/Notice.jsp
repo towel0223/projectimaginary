@@ -85,7 +85,7 @@ dao.close();  // DB 연결 닫기
 		%>
 	</table>
 	<!-- 목록 하단의 [글쓰기] 버튼 -->
-	<%if(session.getAttribute("UserId") == "yoshi"){ %>
+	<%if(session.getAttribute("UserId") != null && (String)session.getAttribute("UserId") == "yoshi"){ %>
 	<table border="1" width="90%">
 		<tr align="right">
 			<td><button type="button" onclick="location.href='NoticeWrite.jsp';">글쓰기</button></td>

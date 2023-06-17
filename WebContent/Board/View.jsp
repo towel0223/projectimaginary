@@ -16,7 +16,7 @@ boardDAO dao = new boardDAO(application);
 commentsDAO cdao = new commentsDAO(application);
 likeDAO ldao = new likeDAO(application);
 memberDAO mdao = new memberDAO(application);
-memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"));
+memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"),(String)session.getAttribute("UserPw"));
 dao.updateVisitCount(num);
 boardDTO dto = dao.selectView(num);
 dao.close();

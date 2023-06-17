@@ -13,12 +13,13 @@ public class memberDAO extends JDBConnect  {
 	{
 		super(application);
 	}
-	public memberDTO getMemberDTO(String id){ //데이터 검색
+	public memberDTO getMemberDTO(String id, String pw){ //데이터 검색
 		memberDTO dto=new memberDTO();
-		String sql="select * from member where id=?";
+		String sql="select * from member where id=? and pass=?";
       try{
 			psmt=con.prepareStatement(sql);
 			psmt.setString(1, id);
+			psmt.setString(2, pw);
 			rs=psmt.executeQuery();
 			if(rs.next())
 			{

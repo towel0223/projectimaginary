@@ -4,8 +4,9 @@
 <%@ page import = "member.memberDTO" %>
 <%
 String SessionId = (String)session.getAttribute("UserId");
+String SessionPw = (String)session.getAttribute("UserPw");
 memberDAO dao = new memberDAO(application);
-memberDTO dto = dao.getMemberDTO(SessionId);
+memberDTO dto = dao.getMemberDTO(SessionId, SessionPw);
 dao.close();
 %>
 <!DOCTYPE html>

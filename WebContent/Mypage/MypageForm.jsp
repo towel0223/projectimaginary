@@ -6,8 +6,9 @@
 <jsp:include page = "../Board/IsLoggedIn.jsp" /> <!-- 로그인 확인 -->
 <%
 String SessionId = (String)session.getAttribute("UserId");
+String SessionPwd = (String)session.getAttribute("UserPw");
 memberDAO dao = new memberDAO(application);
-memberDTO dto = dao.getMemberDTO(SessionId);
+memberDTO dto = dao.getMemberDTO(SessionId, SessionPwd);
 dao.close();
 %>
 <link rel="stylesheet" href="../Common/Nav.css">
@@ -29,13 +30,29 @@ dao.close();
 </script>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-<h2>내정보</h2>
-ID : <%=dto.getId() %><br/>
-NAME : <%=dto.getName() %><br/>
-NICKNAME : <%=dto.getNickname() %><br/>
-TEL : <%=dto.getTel() %><br/>
-<input type="button" value="탈퇴" onClick="delCheck()">
-<input type="button" value="회원정보 수정" onclick="location='UpdateMember.jsp'">
+<div class="container">
+  <h2>내정보</h2>
+  <table>
+    <tr class="info">
+      <td><label>ID:</label></td>
+      <td><span><%=dto.getId() %></span></td>
+    </tr>
+    <tr class="info">
+      <td><label>NAME:</label></td>
+      <td><span><%=dto.getName() %></span></td>
+    </tr>
+    <tr class="info">
+      <td><label>NICKNAME:</label></td>
+      <td><span><%=dto.getNickname() %></span></td>
+    </tr>
+    <tr class="info">
+      <td><label>TEL:</label></td>
+      <td><span><%=dto.getTel() %></span></td>
+    </tr>
+  </table>
+  <input type="button" value="탈퇴" onclick="delCheck()" class="del-btn">
+  <input type="button" value="회원정보 수정" onclick="location='UpdateMember.jsp'">
+</div>
 <jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

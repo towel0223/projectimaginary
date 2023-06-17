@@ -3,6 +3,8 @@ package member;
 import common.JDBConnect;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 
@@ -165,6 +167,29 @@ public class memberDAO extends JDBConnect  {
 
 		    return false;
 		  }
+	  public List<memberDTO> listMember()
+	  { List<memberDTO> list=new ArrayList<memberDTO>();
+	  	String sql="select id,nickname,name,regidate from member";
+	  	try {
+	  		stmt=con.createStatement();
+	  		rs=stmt.executeQuery(sql);
+	  		while(rs.next()) {
+	  			memberDTO dto=new memberDTO();
+	  			dto.setId(rs.getString(1));
+	  			dto.setNickname(rs.getString(2));
+	  			dto.setName(rs.getString(3));
+	  			dto.setRegidate(rs.getDate(4));
+	  			list.add(dto);
+	  		}
+	  		
+	  	}catch(SQLException e) {
+	  		e.printStackTrace();
+	  	
+	  	}
+	  	return list;
+	  
+		  
+	  }
 	}
 
 

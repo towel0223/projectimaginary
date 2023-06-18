@@ -26,7 +26,6 @@ int totalCount = dao.selectCount(param);  // 게시물 수 확인
  
 List<boardDTO> boardLists = dao.selectList(param);  // 게시물 목록 받기
 dao.close();  // DB 연결 닫기
-
 %>
 <!DOCTYPE html>
 <html>
@@ -58,6 +57,7 @@ dao.close();  // DB 연결 닫기
             <th width="8%">조회수</th>
             <th width="10%">작성일</th>
             <th width="8%">좋아요</th>
+            <th width="11%"></th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -83,7 +83,8 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
 		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
-		            <td align="center"><a href="BoardLike.jsp?num=<%=dto.getNum() %>"><button class="<%=dto.getNum() %>">좋아요</button></a></td><!-- 좋아요 버튼 -->
+		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><button id="likeButton" class=<%=dto.getNum()%>>좋아요</button></a>
+		            <a href="BoardLike.jsp?num=<%=dto.getNum()%>&like=false"><button id="unlikeButton" class=<%=dto.getNum()%>>싫어요</button></a></td><!-- 좋아요 버튼 -->
 		            <% }%>
 		        </tr>
 		<%
@@ -97,6 +98,9 @@ dao.close();  // DB 연결 닫기
 			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
 		</tr>
 	</table>
-	<jsp:include page="../Common/Footer.jsp" />
+	<jsp:include page="../Common/Footer.jsp" />	
+	<script>
+	var 
+	</script>
 </body>
 </html>

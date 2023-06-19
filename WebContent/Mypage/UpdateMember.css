@@ -54,15 +54,14 @@ body div h2{
     background-color:#FFF0F5;
 }
 input{
-    background-color:#aaaaaa;
+    background-color:#EBFBFF;
 	outline:none;
 	border:1px solid #C0FFFF;
 	text-align:center;
 	height:20%;
-	color: #FFEFD5;
 }
 select{
-    background-color:#aaaaaa;
+    background-color:#EBFBFF;
 	outline:none;
 	border:1px solid #C0FFFF;
 	text-align:center;

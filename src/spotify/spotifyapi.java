@@ -34,12 +34,7 @@ public class spotifyapi {
             	 songDTO dto2=new songDTO();
             	 dto2.setSname(track.getName());
             	 dto2.setSnum(i++);
-<<<<<<< HEAD
             	 dto2.setPhoto(track.getAlbum().getImages()[0].getUrl());
-=======
-     
-            	 dto2.setPhoto(track.getAlbum().getImages()[0]);
->>>>>>> 26ef665967a773824e2cada3dc70dced60211b0f
             	 dto2.setArtist(track.getArtists()[0].getName());
             	 dto.add(dto2);
              }

@@ -27,11 +27,12 @@
 	<table border="1" width="90%">
         <!-- 각 칼럼의 이름 --> 
         <tr>
-            <th width="10%">순위</th>
+            <th width="5%">순위</th>
             <th width="30%">제목</th>
             <th width="20%">앨범</th>
             <th width="20%">아티스트</th>
             <th width="20%">제작사</th>
+            <th width="5%">재생하기</th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -41,7 +42,7 @@
  			String[] artist = song.artist();
  			String[] maker = song.maker();
  				
- 				for(int i=0; i<100; i++){
+ 			for(int i=0; i<100; i++){
  		%>
 	    	<tr align="center">
 		        <td><%=i+1 %></td>
@@ -49,14 +50,15 @@
 		        <td align="center"><%= album[i] %></td> 
 		        <td align="center"><%= artist[i] %></td>
 		        <td align="center"><%= maker[i] %></td>
+		        <td align="center"><img class="play" src="../images/play.png"></td>
 		    </tr>
 	    <%
-		}
+			}
 		   
 		%>
 		        
 	</table>
-
+	<jsp:include page="../Mp3Player/MusicPlayer.jsp" />
 	<jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

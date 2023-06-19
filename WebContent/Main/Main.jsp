@@ -111,6 +111,7 @@
 		</div>
 	</div>
 	
+	<jsp:include page="../Mp3Player/MusicPlayer.jsp" />
 	<jsp:include page="../Common/Footer.jsp" />
 	
 

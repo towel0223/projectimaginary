@@ -14,7 +14,7 @@
 	
 	int delResult = 0;
 	
-	if(sessionId.equals(dto.getId())){
+	if(sessionId.equals(dto.getId())||sessionId.equals("admin")){
 		dto.setNum(num);
 		delResult = dao.deletePost(dto);
 		dao.close();

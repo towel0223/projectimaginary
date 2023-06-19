@@ -24,7 +24,7 @@
 <body>
 <jsp:include page="../Common/Nav.jsp" />
 <h2>공지사항 - 글쓰기</h2>
-<form name="writeFrm" method="post" action="WriteProcess.jsp" onsubmit="return validateForm(this);">
+<form name="writeFrm" method="post" action="NoticeWriteProcess.jsp" onsubmit="return validateForm(this);">
 	<table border="1" width="90%">
 		<tr>
 			<td>제목</td>

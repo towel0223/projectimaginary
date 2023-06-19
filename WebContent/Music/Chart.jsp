@@ -6,6 +6,7 @@
 <%@ page import="song.songDTO" %>
 <%@ page import="spotify.spotifyapi" %>
 <%@ page import="java.util.List" %>
+<%@ page import= "se.michaelthelin.spotify.model_objects.specification.Image" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,11 @@ List<songDTO> dto=spotify.getTrack_Sync(); %>
 	    	<tr align="center">
 		        <td><%=song.getSnum() %></td>
 		        <td align="center"><%= song.getSname() %></td>
+<<<<<<< HEAD
 		        <td align="center"><img src=<%=song.getPhoto()%>></td>
+=======
+		        <td align="center"><%= song.getPhoto() %></td>
+>>>>>>> 26ef665967a773824e2cada3dc70dced60211b0f
 		        <td align="center"><%= song.getArtist() %></td>
 		    </tr>
 	    <%

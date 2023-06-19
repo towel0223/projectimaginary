@@ -34,8 +34,13 @@ public class songDAO extends JDBConnect  {
 				dto.setSnum(rs.getInt(1));
 				dto.setStitle(rs.getString(2));
 				dto.setSname(rs.getString(3));
+<<<<<<< HEAD
 				
 	
+=======
+				dto.setDuration(rs.getInt(4));
+				
+>>>>>>> 26ef665967a773824e2cada3dc70dced60211b0f
 			}
 		}catch(Exception e)
 		{

@@ -31,7 +31,7 @@ public class songDAO extends JDBConnect  {
 				dto.setStitle(rs.getString(2));
 				dto.setSname(rs.getString(3));
 				dto.setDuration(rs.getInt(4));
-				dto.setSphoto(rs.getString(5));
+				
 			}
 		}catch(Exception e)
 		{

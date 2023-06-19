@@ -6,33 +6,18 @@
 <%@ page import="board.boardDTO" %>
 <%
 int boardNum = Integer.parseInt(request.getParameter("num")); //게시물 번호
-boolean like=Boolean.parseBoolean(request.getParameter("like"));
-String id=session.getAttribute("UserId").toString();
-boardDAO dao = new boardDAO(application);
-boardlikeDAO like_dao=new boardlikeDAO(application);
 
-if(like_dao.boardlikeCheck(id, boardNum)==0)
-{
-	like_dao.insertLike(id, boardNum);
-	if(like)		{
-	
-	dao.PlusLike(boardNum); // 좋아요 1증가
-	}
-	else{
-	
+boardlikeDAO bldao = new boardlikeDAO(application);
+boardDAO dao = new boardDAO(application);
+
+int BlikeCheck = bldao.boardlikeCheck((String)session.getAttribute("UserId"), boardNum);
+
+if(BlikeCheck == 1){	//좋아요 누른상태
+	bldao.deleteLike((String)session.getAttribute("UserId"), boardNum); //userboardlike 테이블에서 삭제
 	dao.MinusLike(boardNum); // 좋아요 1감소
-	}
-}
-else if(like_dao.boardlikeCheck(id, boardNum)==1)
-{
-	like_dao.deleteLike(id, boardNum);
-	if(like){
-		dao.MinusLike(boardNum); // 좋아요 1감소
-	}
-	else{
-		dao.PlusLike(boardNum); // 좋아요 1증가
-	}
-	
+}else{  // 좋아요 안누른 상태
+	bldao.insertLike((String)session.getAttribute("UserId"), boardNum);  //userboardlike 테이블에 추가
+	dao.PlusLike(boardNum); // 좋아요 1증가
 }
 response.sendRedirect("FreeBoardList.jsp");
 %>

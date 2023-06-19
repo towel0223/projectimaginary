@@ -1,14 +1,11 @@
 package song;
 
-import java.sql.Blob;
-import java.sql.Date;
-
 public class songDTO {
 	private int snum;
 	private String stitle;
-	private String sname;
-	private Date sdate;
-	private String sphoto;
+	private String artist;
+	private String producer;
+	private String album;
 
 	public int getSnum() {
 		return snum;
@@ -22,23 +19,23 @@ public class songDTO {
 	public void setStitle(String stitle) {
 		this.stitle = stitle;
 	}
-	public String getSname() {
-		return sname;
+	public String getArtist() {
+		return artist;
 	}
-	public void setSname(String sname) {
-		this.sname = sname;
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
-	public Date getSdate() {
-		return sdate;
+	public String getProducer() {
+		return producer;
 	}
-	public void setSdate(Date sdate) {
-		this.sdate = sdate;
+	public void setProducer(String producer) {
+		this.producer = producer;
 	}
-	public String getSphoto() {
-		return sphoto;
+	public String getAlbum() {
+		return album;
 	}
-	public void setSphoto(String sphoto) {
-		this.sphoto = sphoto;
+	public void setAlbum(String album) {
+		this.album = album;
 	}
 	public songDTO() {
 		super();

@@ -3,6 +3,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="board.boardDTO" %>
 <%@ page import="board.boardDAO" %>
+<%@ page import="like.boardlikeDAO" %>
+<%@ page import="like.boardlikeDTO" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,6 +13,7 @@ request.setCharacterEncoding("utf-8");
 // 게시물 목록 받아오기
 // DAO를 생성해 DB에 연결
 boardDAO dao = new boardDAO(application);
+boardlikeDAO bldao = new boardlikeDAO(application);
 
 // 사용자가 입력한 검색 조건을 Map에 저장
 Map<String, Object> param = new HashMap<String, Object>();
@@ -82,10 +85,13 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
+		            <% int BlikeCheck = bldao.boardlikeCheck((String)session.getAttribute("UserId"), dto.getNum());%>
 		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
-		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><button id="likeButton" class=<%=dto.getNum()%>>좋아요</button></a>
-		            <a href="BoardLike.jsp?num=<%=dto.getNum()%>&like=false"><button id="unlikeButton" class=<%=dto.getNum()%>>싫어요</button></a></td><!-- 좋아요 버튼 -->
-		            <% }%>
+		           	<%if(BlikeCheck == 0) {%>
+		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><img src="../../images/unlike.png" id="likeButton" class=<%=dto.getNum()%>></img></a></td><!-- 좋아요 버튼 -->
+		           	<%}else{ %>
+		           	<td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><img src="../images/like.png" id="likeButton" class=<%=dto.getNum()%>></img></a></td><!-- 좋아요 버튼 -->
+		            <%} }%>
 		        </tr>
 		<%
 		    }

@@ -28,9 +28,9 @@ public class songDAO extends JDBConnect  {
 			{
 				dto.setSnum(rs.getInt(1));
 				dto.setStitle(rs.getString(2));
-				dto.setSname(rs.getString(3));
-				dto.setSdate(rs.getDate(4));
-				dto.setSphoto(rs.getString(5));
+				dto.setArtist(rs.getString(3));
+				dto.setProducer(rs.getString(4));
+				dto.setAlbum(rs.getString(5));
 			}
 		}catch(Exception e)
 		{
@@ -44,7 +44,7 @@ public class songDAO extends JDBConnect  {
 	public List<songDTO> getSearchList(String searchWord){//제목 or 가수 검색
 		List<songDTO> sList = new ArrayList<songDTO>();
 		try {
-			String sql = "SELECT * FROM song WHERE sname LIKE ? OR stitle LIKE ?";
+			String sql = "SELECT * FROM song WHERE artist LIKE ? OR stitle LIKE ?";
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, "%" + searchWord + "%");
 			psmt.setString(2, "%" + searchWord + "%");
@@ -52,16 +52,16 @@ public class songDAO extends JDBConnect  {
 			while(rs.next()) {
 				int num = rs.getInt(1);
 				String title = rs.getString(2);
-				String name = rs.getString(3);
-				Date date = rs.getDate(4);
-				String photo = rs.getString(5);
+				String artist = rs.getString(3);
+				String album = rs.getString(4);
+				String producer = rs.getString(5);
 				
 				songDTO dto = new songDTO();
 				dto.setSnum(num);
 				dto.setStitle(title);
-				dto.setSname(name);
-				dto.setSdate(date);
-				dto.setSphoto(photo);
+				dto.setArtist(artist);
+				dto.setAlbum(album);
+				dto.setProducer(producer);
 				
 				sList.add(dto);
 			}
@@ -79,6 +79,45 @@ public class songDAO extends JDBConnect  {
 	            e.printStackTrace();
 	        }
 	    }
+		return sList;
+	}
+	
+	public List<songDTO> getFamousList(){
+		List<songDTO> sList = new ArrayList<songDTO>();
+		try {
+			String sql = "SELECT * FROM song";
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String title = rs.getString(2);
+				String artist = rs.getString(3);
+				String album = rs.getString(4);
+				String producer = rs.getString(5);
+				
+				songDTO dto = new songDTO();
+				dto.setSnum(num);
+				dto.setStitle(title);
+				dto.setArtist(artist);
+				dto.setAlbum(album);
+				dto.setProducer(producer);
+				
+				sList.add(dto);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return sList;
 	}
 

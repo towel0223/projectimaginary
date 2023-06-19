@@ -45,8 +45,7 @@ List<songDTO> dto=spotify.getTrack_Sync(); %>
 	    	<tr align="center">
 		        <td><%=song.getSnum() %></td>
 		        <td align="center"><%= song.getSname() %></td>
-		        <td align="center"><%= song.getStitle() %></td> 
-		        <td align="center"><%= song.getPhoto() %></td>
+		        <td align="center"><img src=<%=song.getPhoto()%>></td>
 		        <td align="center"><%= song.getArtist() %></td>
 		    </tr>
 	    <%

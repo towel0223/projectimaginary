@@ -4,9 +4,11 @@ drop table board;
 drop table userboardlike;
 drop table member;
 drop table song;
+drop table banner;
 drop sequence seq_notice_num;
 drop sequence seq_board_num;
 drop sequence seq_comments_num;
+drop sequence seq_song_num;
 create table member(
 	id varchar2(20) not null,
 	pass varchar2(20) not null,
@@ -49,8 +51,14 @@ create table song(
    snum  number primary key,
    stitle varchar2(30),
    sname varchar2(30),
-   Duration number,
-   sphoto varchar2(200)
+   artist varchar2(30),
+   sphoto varchar2(200),
+   url varchar2(200)
+);
+create table banner(
+   num  number primary key,
+   url varchar2(200),
+   fName varchar2(20)   
 );
 create sequence seq_notice_num
    increment by 1
@@ -81,4 +89,13 @@ create sequence seq_song_num
    nocycle
    nocache;
    commit;
+create sequence seq_song_num
+   increment by 1
+   start with 1
+   minvalue 1
+   nomaxvalue
+   nocycle
+   nocache;
+   commit;
+  
 

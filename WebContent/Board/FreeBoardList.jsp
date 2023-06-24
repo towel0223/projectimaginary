@@ -17,9 +17,9 @@ boardlikeDAO bldao = new boardlikeDAO(application);
 
 // 사용자가 입력한 검색 조건을 Map에 저장
 Map<String, Object> param = new HashMap<String, Object>();
-
 String searchField = request.getParameter("searchField");
 String searchWord = request.getParameter("searchWord");
+
 if(searchWord != null){
 	param.put("searchField", searchField);
 	param.put("searchWord", searchWord);

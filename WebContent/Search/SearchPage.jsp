@@ -14,8 +14,10 @@
 <head>
 <meta charset="UTF-8">
 <title>통합검색</title>
+<link rel="stylesheet" href="./SearchPage.css">
 </head>
 <body>
+
 <% 
 request.setCharacterEncoding("UTF-8");
 String SearchWord = request.getParameter("value");
@@ -33,42 +35,60 @@ List<boardDTO> board=boardDAO.selectList(SearchWord);
 <div>
 <h2>자유게시판</h2>
 <hr>
+<div>
+<table>
 <%
 for(boardDTO dto: board)
+
 {%>
-	<a><%=dto.getTitle()%></a>
-	<a><%=dto.getContent()%></a>
-	<a><%=dto.getId()%></a>
-	<a><%=dto.getPostdate()%></a>
-	<a><%=dto.getLikes()%></a>
+
+	<tr><th width="20%"><a href="../Board/View.jsp?num=<%=dto.getNum()%>"><%=dto.getTitle()%></a></th>
+	<td width="20%"><%=dto.getContent()%></td>
+	<td width="20%"><%=dto.getId()%></td>
+	<td width="20%"><%=dto.getPostdate()%></td>
+	<td width="20%"><%=dto.getLikes()%></td>
+	</tr>
+
 <% }
 %>
+</table>
+</div>
 </div>
 
 <div>
 <h2>인기차트</h2>
 <hr>
+<div id="song">
+<table>
 <% List<songDTO> song=spotifyapi.getsong(SearchWord);
 
 for(songDTO dto: song){
 %>
-<a><%= dto.getSname()%></a>
-<img src=<%=dto.getPhoto()%>>
-<a><%= dto.getArtist()%></a>
+<tr><td><img src=<%=dto.getPhoto()%>></td>
+<td><%= dto.getSname()%></td>
+<td><%= dto.getArtist()%></td>
+</tr>
 <%} %>
+</table>
+</div>
 </div>
 <div>
 <h2>공지사항</h2>
 <hr>
+<div>
+<table>
 <%
 for(noticeDTO dto: board2)
 {%>
-	<a><%=dto.getTitle()%></a>
-	<a><%=dto.getContent()%></a>
-	<a><%=dto.getId()%></a>
-	<a><%=dto.getPostdate()%></a>
+	<tr><th width="20%"><a href="../Notice/NoticeView.jsp?num=<%=dto.getNum()%>"><%=dto.getTitle()%></a></th>
+	<td width="20%"><%=dto.getContent()%></td>
+	<td width="20%"><%=dto.getId()%></td>
+	<td width="20%"><%=dto.getPostdate()%></td>
+	</tr>
 <% }
 %>
+</table>
+</div>
 </div>
 
 

@@ -34,7 +34,7 @@ public class noticeDAO extends JDBConnect{
             while (rs.next()) {  // 결과를 순화하며...
                 // 한 행(게시물 하나)의 내용을 DTO에 저장
             	noticeDTO dto = new noticeDTO(); 
-
+            	 dto.setNum(rs.getInt("num"));
                 dto.setTitle(rs.getString("title"));
                 dto.setContent(rs.getString("content"));
                 dto.setId(rs.getString("id"));

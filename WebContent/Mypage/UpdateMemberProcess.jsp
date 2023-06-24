@@ -4,6 +4,7 @@
 <%@ page import = "member.memberDTO" %>
 <%
 //수정된 정보 받아오기
+request.setCharacterEncoding("UTF-8");
 String updateID = request.getParameter("yoshi_id");
 String updatePASS = request.getParameter("yoshi_pw");
 String updateNIC = request.getParameter("yoshi_nic");

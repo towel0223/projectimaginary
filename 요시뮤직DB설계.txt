@@ -1,11 +1,13 @@
 drop table comments;
 drop table notice;
-drop table board;
 drop table userboardlike;
+drop table userlike;
+drop table board;
 drop table member;
 drop table song;
 drop table banner;
 drop table userlike;
+
 drop sequence seq_notice_num;
 drop sequence seq_board_num;
 drop sequence seq_comments_num;
@@ -51,7 +53,7 @@ create table userboardlike(
 );
 create table userlike (
    member_id varchar2(20),
-   comments_num number,
+   comments_num number
 );
 create table song(
    snum  number primary key,

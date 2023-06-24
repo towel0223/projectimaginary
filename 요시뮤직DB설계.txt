@@ -5,35 +5,37 @@ drop table userboardlike;
 drop table member;
 drop table song;
 drop table banner;
+drop table userlike;
 drop sequence seq_notice_num;
 drop sequence seq_board_num;
 drop sequence seq_comments_num;
 drop sequence seq_song_num;
 create table member(
-	id varchar2(20) not null,
-	pass varchar2(20) not null,
-	nickname varchar2(20) not null,
-	name varchar2(10) not null,
-	tel varchar2(20) not null,
-	regidate date default sysdate not null,
-	primary key(id)
+   id varchar2(20) not null,
+   pass varchar2(20) not null,
+   name varchar2(10) not null,
+   tel varchar2(20) not null,
+   nickname varchar2(20) not null,
+   regidate date default sysdate not null,
+   primary key(id)
 );
 create table board(
-	num number primary key,
-	title varchar2(200) not null,
- 	content varchar2(2000) not null,
-	id varchar(20) references member (id),
-	postdate date default sysdate ,
-	visitcount number not null,
-	likes number
+   num number primary key,
+   title varchar2(200) not null,
+    content varchar2(2000) not null,
+   id varchar(20) references member (id),
+   postdate date default sysdate ,
+   visitcount number not null,
+   likes NUMBER(6) DEFAULT 0 NOT NULL
 );
-create table comments(
-	num number primary key,
-	cnum number references board (num),
-	id varchar(20) references member (id),
- 	content varchar2(2000) not null,
-	postdate date default sysdate not null,
-	likes number not null
+CREATE TABLE comments (
+    num NUMBER PRIMARY KEY,
+    cnum NUMBER NOT NULL,
+    id VARCHAR2(20) NOT NULL,
+    nickname VARCHAR2(20) NOT NULL,
+    content VARCHAR2(2000) NOT NULL,
+    postdate DATE DEFAULT SYSDATE NOT NULL,
+    likes NUMBER(6) DEFAULT 0 NOT NULL
 );
 create table notice(
    num number primary key,
@@ -46,6 +48,10 @@ create table notice(
 create table userboardlike(
    member_id varchar2(20) references member (id),
    board_num number references board (num)
+);
+create table userlike (
+   member_id varchar2(20),
+   comments_num number,
 );
 create table song(
    snum  number primary key,
@@ -98,4 +104,3 @@ create sequence seq_song_num
    nocache;
    commit;
   
-

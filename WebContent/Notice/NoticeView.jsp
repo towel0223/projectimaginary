@@ -31,7 +31,7 @@ dao.close();
 </head>
 <body>
 <jsp:include page="../Common/Nav.jsp" />
-
+<div class="container">
 <form name="writeFrm">
      <input type="hidden" name="num" value="<%=dto.getNum() %>" />  <!-- 공통 링크 -->
      <table border="1" width="90%">
@@ -71,6 +71,7 @@ dao.close();
      	</tr>
      </table>
 </form>
+</div>
 <jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

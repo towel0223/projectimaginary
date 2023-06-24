@@ -6,7 +6,7 @@
 String SessionId = (String)session.getAttribute("UserId");
 String SessionPw = (String)session.getAttribute("UserPw");
 memberDAO dao = new memberDAO(application);
-memberDTO dto = dao.getMemberDTO(SessionId, SessionPw);
+memberDTO dto = dao.getMemberDTO(SessionId);
 dao.close();
 %>
 <!DOCTYPE html>

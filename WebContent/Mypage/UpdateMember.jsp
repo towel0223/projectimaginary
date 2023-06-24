@@ -14,6 +14,7 @@ dao.close();
 <head>
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
+<link rel="stylesheet" href="./UpdateMember.css">
 <script type="text/javascript">
 function checkAll(form){
 	var passError = document.getElementById("passError");//비밀번호 에러
@@ -69,25 +70,32 @@ function checkAll(form){
 </script>
 </head>
 <body>
+<div id="main">
+<div id="logo">
+		<a href="../Main/Main.jsp" > 
+			<img src="../images/logo.png">
+		</a>
+	</div>	
 <h2>회원 정보 수정</h2>
 <form action="UpdateMemberProcess.jsp" method="post" onsubmit="return checkAll(this);">
-	ID : <input type="text" name="yoshi_id" value="<%=dto.getId() %>" readonly="readonly"><br> <!-- 읽기만 가능 -->
-	PASSWORD : <input type="password" name="yoshi_pw" placeholder="비밀번호를 입력하시오."><br>
+	<div><a>ID :</a> <div><input type="text" name="yoshi_id" value="<%=dto.getId() %>" readonly="readonly"><br> <!-- 읽기만 가능 --></div></div>
+	<div><a>PASSWORD :</a> <div><input type="password" name="yoshi_pw" placeholder="비밀번호를 입력하시오."><br></div></div>
 	<span id="passError" style="color:red"></span>
-	NAME : <input type="text" name="yoshi_name" value="<%=dto.getName() %>" readonly="readonly"><br> <!-- 읽기만 가능 -->
-	NICKNAME : <input type="text" name="yoshi_nic" value="<%=dto.getNickname() %>"><br>
+	<div><a>NAME</a> : <div><input type="text" name="yoshi_name" value="<%=dto.getName() %>" readonly="readonly"><br> <!-- 읽기만 가능 --></div></div>
+	<div><a>NICKNAME</a> : <div><input type="text" name="yoshi_nic" value="<%=dto.getNickname() %>"><br></div></div>
 	<span id="nicError" style="color:red"></span>
-	TEL : <select name="yoshi_tel1" id="tell">
+	<div>TEL : <div id="tell"><select name="yoshi_tel1" id="tell">
 				<option value="010">010</option>
 				<option value="02">02</option>
 				<option value="031">031</option>
 				<option value="051">051</option>
 			</select>
 			<input type="text" name="yoshi_tel2" size="5" maxlength="4" placeholder="0000">
-			<input type="text" name="yoshi_tel3" size="5" maxlength="4" placeholder="0000"><br>
+			<input type="text" name="yoshi_tel3" size="5" maxlength="4" placeholder="0000"><br></div></div>
 			<span id="telError" style="color:red"></span>
 	<input type="submit" value="회원수정">
 </form>
+</div>
 <jsp:include page="../Common/Footer.jsp" />
 </body>
 </html>

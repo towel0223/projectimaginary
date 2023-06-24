@@ -3,7 +3,6 @@ package song;
 import common.JDBConnect;
 import se.michaelthelin.spotify.model_objects.specification.Image;
 
-import java.util.ArrayList;
 import java.sql.Blob;
 import java.util.*;
 import java.sql.Date;
@@ -11,9 +10,14 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 
+import banner.bannerDTO;
 import song.songDTO;
 
 public class songDAO extends JDBConnect  {
+	public songDAO()
+	{
+		super();
+	}
 	public songDAO(ServletContext application)
 	{
 		super(application);
@@ -30,8 +34,7 @@ public class songDAO extends JDBConnect  {
 				dto.setSnum(rs.getInt(1));
 				dto.setStitle(rs.getString(2));
 				dto.setSname(rs.getString(3));
-				dto.setDuration(rs.getInt(4));
-				dto.setSphoto(rs.getString(5));
+
 			}
 		}catch(Exception e)
 		{
@@ -61,7 +64,7 @@ public class songDAO extends JDBConnect  {
 				dto.setSnum(num);
 				dto.setStitle(title);
 				dto.setSname(name);
-				dto.setDuration(date);
+			
 				
 				
 				sList.add(dto);
@@ -82,5 +85,90 @@ public class songDAO extends JDBConnect  {
 	    }
 		return sList;
 	}
+	
+	public int InsertSong(songDTO dto){
+		int count=0;
+		String sql="insert into song(snum,stitle,sname,artist,url,sphoto) values (?,?,?,?,?,?)";
+		try{
+			psmt=con.prepareStatement(sql);
+			psmt.setInt(1, dto.getSnum());
+			psmt.setString(2, dto.getUrl());
+			psmt.setString(3,dto.getSname());
+			psmt.setString(4,dto.getArtist());
+			psmt.setString(5,dto.getUrl());
+			psmt.setString(6,dto.getPhoto());
+			count=psmt.executeUpdate();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return count;
+	}
+	public int UpdateSong(songDTO dto) {
+		int count=0;
+		String sql="update song set stitle=?,sname=?,artist=?,sphoto=?,url= ? where snum= ?";
+		try{
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, dto.getStitle());
+			psmt.setString(2, dto.getSname());
+			psmt.setString(3, dto.getArtist());
+			psmt.setString(4, dto.getPhoto());
+			psmt.setString(5, dto.getUrl());
+			psmt.setInt(6, dto.getSnum());
+			count=psmt.executeUpdate();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return count;
+	}
+	public songDTO SelectSong(songDTO dto) {
+		songDTO song=new songDTO();
+		String sql="select * from song where snum=?";
+		try{
+			psmt=con.prepareStatement(sql);
+			psmt.setInt(1, dto.getSnum());
+			rs=psmt.executeQuery();
+			if(rs.next())
+			{
+				song.setSnum(rs.getInt(1));
+				song.setStitle(rs.getString(2));
+				song.setSname(rs.getString(3));
+				song.setArtist(rs.getString(4));
+				song.setPhoto(rs.getString(5));
+				song.setUrl(rs.getString(6));
+				return song;
+
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public List<songDTO> getMainSong(){
+		List<songDTO> dto=new ArrayList<songDTO>();
+		String sql="select * from song";
+		try {
+			stmt=con.createStatement();
+			rs=stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				songDTO song=new songDTO();
+				song.setSnum(rs.getInt(1));
+				song.setStitle(rs.getString(2));
+				song.setSname(rs.getString(3));
+				song.setArtist(rs.getString(4));
+				song.setPhoto(rs.getString(5));
+				song.setUrl(rs.getString(6));
+				dto.add(song);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
 
 }

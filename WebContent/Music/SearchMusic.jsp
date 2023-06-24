@@ -12,11 +12,6 @@ songDAO dao = new songDAO(application);
 List<songDTO> SongList = dao.getSearchList(SearchWord);
 dao.close();
 
-	chart song = new chart();
-	String[] title = song.title();
-	String[] album = song.album();
-	String[] artist = song.artist();
-	String[] maker = song.maker();
 %>
 <!DOCTYPE html>
 <html>
@@ -30,19 +25,18 @@ dao.close();
     <table border="1" width="90%">
         <tr>
             <th width="10%">번호</th>
-            <th width="20%">앨범</th>
+            <th width="30%">앨범</th>
             <th width="30%">제목</th>
-            <th width="20%">아티스트</th>
-            <th width="20%">발매일</th>
+            <th width="30%">아티스트</th>
         </tr>
 
         <% for (songDTO Song : SongList) { //리스트 출력%> 
         	<tr>
 					<td><%=Song.getSnum() %></td>
-					<td><img src="../images/<%=Song.getSphoto() %>"></td>
+					
 					<td><%=Song.getStitle() %></td>
 					<td><%=Song.getSname() %></td>
-					<td><%=Song.getSdate() %></td>
+				
 			</tr>
 		
       <%} %>

@@ -1,5 +1,9 @@
 package song;
 
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+
 import se.michaelthelin.spotify.model_objects.specification.Image;
 
 public class songDTO {
@@ -7,8 +11,8 @@ public class songDTO {
 	private String stitle;
 	private String sname;
 	private String artist;
-	private Integer Duration;
-	private Image sphoto;
+	private String sphoto;
+	private String url;
 
 	public int getSnum() {
 		return snum;
@@ -28,16 +32,11 @@ public class songDTO {
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-	public Integer getDuration() {
-		return Duration;
-	}
-	public void setDuration(Integer Duration) {
-		this.Duration = Duration;
-	}
-	public Image getPhoto() {
+	
+	public String getPhoto() {
 		return sphoto;
 	}
-	public void setPhoto(Image sphoto) {
+	public void setPhoto(String sphoto) {
 		this.sphoto = sphoto;
 	}
 	public songDTO() {
@@ -48,6 +47,12 @@ public class songDTO {
 	}
 	public void setArtist(String artist) {
 		this.artist = artist;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 

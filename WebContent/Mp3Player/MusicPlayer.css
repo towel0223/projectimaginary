@@ -1,82 +1,99 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  transition: all 0.35s linear;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.35s linear;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    --bg: #613594;
+    background-color: var(--bg);
+    color: white;
 }
 
-.player {
-  width: 640px;
-  background-color: var(--bg);
-  display: grid;
-  grid-template-columns: 48px 1fr 48px;
-  grid-gap: 16px;
-  padding: 8px 24px;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 64px;
-}
-
-.control,
-#current {
-  height: 100%;
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 16px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.logo img {
+  max-width: 500px;
+  height: auto;
+}
+
+
+
+.player {
+    width: 640px;
+    background-color: var(--bg);
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    grid-gap: 16px;
+    padding: 8px 24px;
+    position: relative;
+    border-radius: 64px;
+}
+
+.control,#current {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px;
 }
 
 #playbtn {
-  font-size: 24px;
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-  cursor: pointer;
+    font-size: 24px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    cursor: pointer;
 }
 
 #playbtn:hover {
-  -webkit-text-fill-color: white;
+    -webkit-text-fill-color: white;
 }
 
 .info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
 }
 
 #current {
-  text-align: right;
+    text-align: right;
 }
 
 .bar {
-  --space: -4px;
-  background-color: #24242424;
-  overflow: hidden;
-  left: var(--space);
-  right: var(--space);
-  top: var(--space);
-  bottom: var(--space);
-  position: absolute;
-  border-radius: 64px;
-  z-index: -2;
+    --space: -4px;
+    background-color: #24242424;
+    overflow: hidden;
+    left: var(--space);
+    right: var(--space);
+    top: var(--space);
+    bottom: var(--space);
+    position: absolute;
+    border-radius: 64px;
+    z-index: -2;
 }
 
 #progress {
-  display: block;
-  width: var(--progress, 0%);
-  background-color: white;
-  transition: all 1s linear;
-  height: 100%;
+    display: blcok;
+    width: var(--progress,0%);
+    background-color: white;
+    transition: all 1s linear;
+    height: 100%;
 }

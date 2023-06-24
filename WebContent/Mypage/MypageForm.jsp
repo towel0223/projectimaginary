@@ -12,7 +12,6 @@ memberDAO dao = new memberDAO(application);
 memberDTO dto = dao.getMemberDTO(SessionId, SessionPwd);
 dao.close();
 %>
-<link rel="stylesheet" href="../Common/Nav.css">
 <!DOCTYPE html>
 <html>
 <head>

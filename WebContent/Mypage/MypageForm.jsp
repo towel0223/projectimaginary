@@ -9,7 +9,7 @@
 	String SessionId = (String) session.getAttribute("UserId");
 String SessionPwd = (String) session.getAttribute("UserPw");
 memberDAO dao = new memberDAO(application);
-memberDTO dto = dao.getMemberDTO(SessionId, SessionPwd);
+memberDTO dto = dao.getMemberDTO(SessionId);
 dao.close();
 %>
 <!DOCTYPE html>

@@ -28,25 +28,25 @@ dao.close();
 <title>회원제 게시판</title>
 <link rel="stylesheet" href="./View.css">
 <script type="text/javascript">
-   function deletePost() {
-      var confirmed = confirm("정말로 삭제하시겠습니까?");
-      
-      if(confirmed) {
-         var form = document.writeFrm;
-         form.method = "post";
-         form.action = "DeleteProcess.jsp";
-         form.submit();
-      }
-   }
+	function deletePost() {
+		var confirmed = confirm("정말로 삭제하시겠습니까?");
+		
+		if(confirmed) {
+			var form = document.writeFrm;
+			form.method = "post";
+			form.action = "DeleteProcess.jsp";
+			form.submit();
+		}
+	}
 </script>
 <script type="text/javascript">
-   function validateForm(form){
-      if(form.content.value == ""){
-         alert("내용을 입력하세요.");
-         form.content.focus();
-         return false;
-      }
-   }
+	function validateForm(form){
+		if(form.content.value == ""){
+			alert("내용을 입력하세요.");
+			form.content.focus();
+			return false;
+		}
+	}
 </script>
 </head>
 <body>
@@ -77,7 +77,6 @@ dao.close();
 				<td colspan="3" height="100"><%=dto.getContent().replace("\r\n", "<br/>") %></td>
 			</tr>
 
-
 			<tr>
 				<td colspan="4" align="center">
 					<%
@@ -94,7 +93,6 @@ dao.close();
 			</tr>
 		</table>
 	</form>
-
 
 	<table class="comment-table">
 		<tr>
@@ -119,7 +117,6 @@ List<commentsDTO> commentList = cdao.getCommentList(num); // 댓글 리스트 �
 
 for (commentsDTO comment : commentList) { //댓글 리스트
 %>
-
 	<div class="comment">
 		<div class="comment-info">
 			<span>작성자: <%= comment.getNickName() %></span> <span
@@ -148,7 +145,6 @@ for (commentsDTO comment : commentList) { //댓글 리스트
 
 
 	<%
-
 }
 %>
 </div>

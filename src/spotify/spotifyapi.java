@@ -20,8 +20,17 @@ public class spotifyapi {
 
 	static SpotifyApi spotifyApi = new SpotifyApi.Builder().setAccessToken(accessToken).build();
 
-<<<<<<< HEAD
-             for (Track track : trackPaging.getItems()) {
+
+             
+    
+    public static List<songDTO> getsong(String search) {
+    	int i=1;
+    	 try {
+    		 List<songDTO> dto=new ArrayList<songDTO>();
+             // Get top tracks
+    		 SearchTracksRequest  searchTracksRequest = spotifyApi.searchTracks(search).build();
+    		 Paging<Track> trackPaging = searchTracksRequest.execute();
+    		 for (Track track : trackPaging.getItems()) {
             	 songDTO dto2=new songDTO();
             	 dto2.setSname(track.getName());
             	 dto2.setSnum(i++);
@@ -35,24 +44,16 @@ public class spotifyapi {
          }
     	 return null;
      }
-    
-    public static List<songDTO> getsong(String search) {
-    	 try {
-    		 List<songDTO> dto=new ArrayList<songDTO>();
-             // Get top tracks
-    		 SearchTracksRequest  searchTracksRequest = spotifyApi.searchTracks(search).build();
-=======
->>>>>>> 47c7cc18242a2fb1f900ed47d3c85dac627dd3be
+
 
 	public static List<songDTO> getTrack_Sync() {
-		int i=1;
+		
 		try {
 			List<songDTO> dto=new ArrayList<songDTO>();
 			// Get top tracks
 			SearchTracksRequest  searchTracksRequest = spotifyApi.searchTracks("year:2023").limit(50).market(CountryCode.KR).build();
-
-<<<<<<< HEAD
-             for (Track track : trackPaging.getItems()) {
+			Paging<Track> trackPaging = searchTracksRequest.execute(); 
+			for (Track track : trackPaging.getItems()) {
             	 songDTO dto2=new songDTO();
             	 dto2.setSname(track.getName());
             	 dto2.setPhoto(track.getAlbum().getImages()[0].getUrl());
@@ -65,48 +66,8 @@ public class spotifyapi {
          }
     	 return null;
      }
-    public static List<songDTO> getsong(String search,CountryCode country,int count) {
-   	 try {
-   		 List<songDTO> dto=new ArrayList<songDTO>();
-            // Get top tracks
-   		 SearchTracksRequest  searchTracksRequest = spotifyApi.searchTracks(search).limit(count).market(country).build();
-
-            Paging<Track> trackPaging = searchTracksRequest.execute();
-
-            for (Track track : trackPaging.getItems()) {
-           	 songDTO dto2=new songDTO();
-           	 dto2.setSname(track.getName());
-           	 dto2.setPhoto(track.getAlbum().getImages()[0].getUrl());
-           	 dto2.setArtist(track.getArtists()[0].getName());
-           	 dto.add(dto2);
-            }
-            return dto;
-        } catch (ParseException |IOException | SpotifyWebApiException e) {
-            e.printStackTrace();
-        }
-   	 return null;
-    }
-    public static List<songDTO> getTodaySong() {
-   	 try {
-   		 List<songDTO> dto=new ArrayList<songDTO>();
-    
-=======
-			Paging<Track> trackPaging = searchTracksRequest.execute();
-
-			for (Track track : trackPaging.getItems()) {
-				songDTO dto2=new songDTO();
-				dto2.setSname(track.getName());
-				dto2.setSnum(i++);
-				dto2.setPhoto(track.getAlbum().getImages()[0].getUrl());
-				dto2.setArtist(track.getArtists()[0].getName());
-				dto.add(dto2);
-			}
-			return dto;
-		} catch (ParseException |IOException | SpotifyWebApiException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+   
+   
 
 	public static List<songDTO> getsong(String search,CountryCode country,int count) {
 		try {
@@ -168,10 +129,7 @@ public class spotifyapi {
 	    
 	    return null;
 	}
-
-
 }
->>>>>>> 47c7cc18242a2fb1f900ed47d3c85dac627dd3be
 
 
 

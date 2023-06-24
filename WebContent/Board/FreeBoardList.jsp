@@ -55,12 +55,11 @@ dao.close();  // DB 연결 닫기
         <!-- 각 칼럼의 이름 --> 
         <tr>
             <th width="8%">번호</th>
-            <th width="40%">제목</th>
+            <th width="44%">제목</th>
             <th width="15%">작성자</th>
             <th width="8%">조회수</th>
-            <th width="10%">작성일</th>
-            <th width="8%">좋아요</th>
-            <th width="11%"></th>
+            <th width="14%">작성일</th>
+            <th width="11%">좋아요</th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%

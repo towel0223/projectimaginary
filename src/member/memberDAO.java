@@ -15,20 +15,21 @@ public class memberDAO extends JDBConnect  {
 	{
 		super(application);
 	}
-	public memberDTO getMemberDTO(String id){ //데이터 검색
+	public memberDTO getMemberDTO(String id, String pw){ //데이터 검색
 		memberDTO dto=new memberDTO();
-		String sql="select * from member where id=?";
+		String sql="select * from member where id=? and pass=?";
       try{
 			psmt=con.prepareStatement(sql);
 			psmt.setString(1, id);
+			psmt.setString(2, pw);
 			rs=psmt.executeQuery();
 			if(rs.next())
 			{
 				dto.setId(rs.getString(1));
 				dto.setPass(rs.getString(2));
-				dto.setName(rs.getString(3));
-				dto.setTel(rs.getString(4));
-				dto.setNickname(rs.getString(5));
+				dto.setNickname(rs.getString(3));
+				dto.setName(rs.getString(4));
+				dto.setTel(rs.getString(5));
 				dto.setRegidate(rs.getDate(6));
 
 			}
@@ -61,9 +62,9 @@ public class memberDAO extends JDBConnect  {
 			{
 				dto.setId(rs.getString(1));
 				dto.setPass(rs.getString(2));
-				dto.setName(rs.getString(3));
-				dto.setTel(rs.getString(4));
-				dto.setNickname(rs.getString(5));
+				dto.setNickname(rs.getString(3));
+				dto.setName(rs.getString(4));
+				dto.setTel(rs.getString(5));
 				dto.setRegidate(rs.getDate(6));
 
 			}
@@ -86,9 +87,9 @@ public class memberDAO extends JDBConnect  {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPass());
-			psmt.setString(3, dto.getName());
-			psmt.setString(4, dto.getTel());
-			psmt.setString(5, dto.getNickname());
+			psmt.setString(3, dto.getNickname());
+			psmt.setString(4, dto.getName());
+			psmt.setString(5, dto.getTel());
 
 			result = psmt.executeUpdate();
 		} catch(Exception e) {
@@ -122,7 +123,7 @@ public class memberDAO extends JDBConnect  {
 			stmt= con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while(rs.next()) {
-				if (rs.getString(5).equals(nic)) {
+				if (rs.getString(3).equals(nic)) {
 					result = true;
 				}
 			}
@@ -176,9 +177,9 @@ public class memberDAO extends JDBConnect  {
 	  		while(rs.next()) {
 	  			memberDTO dto=new memberDTO();
 	  			dto.setId(rs.getString(1));
-	  			dto.setNickname(rs.getString(2));
-	  			dto.setName(rs.getString(3));
-	  			dto.setRegidate(rs.getDate(4));
+	  			dto.setNickname(rs.getString(3));
+	  			dto.setName(rs.getString(4));
+	  			dto.setRegidate(rs.getDate(6));
 	  			list.add(dto);
 	  		}
 	  		

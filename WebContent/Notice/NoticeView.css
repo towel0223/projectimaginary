@@ -1,25 +1,58 @@
-@charset "UTF-8";
-
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-table {
-  border-collapse: collapse;
-  width: 90%;
-  margin: 20px auto;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-td {
-  padding: 8px;
+form[name="writeFrm"] table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+form[name="writeFrm"] table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+form[name="writeFrm"] table td:first-child {
+    width: 80px;
+}
+
+form[name="writeFrm"] table td:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+form[name="writeFrm"] table td:nth-child(even) {
+    background-color: #fff;
+}
+
+form[name="writeFrm"] table td[colspan="4"] {
+    text-align: center;
 }
 
 button {
-  padding: 8px 16px;
-  margin: 5px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-button:hover {
-  background-color: #ccc;
-  cursor: pointer;
+.container form[name="writeFrm"] button[type="button"] {
+    margin-top: 10px;
+}
+
+.container form[name="writeFrm"] button[type="submit"] {
+    display: block;
+    margin: 10px auto;
 }

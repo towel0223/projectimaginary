@@ -119,8 +119,7 @@ for (commentsDTO comment : commentList) { //댓글 리스트
 %>
 	<div class="comment">
 		<div class="comment-info">
-			<span>작성자: <%= comment.getNickName() %></span> <span
-				class="comment-date">작성일: <%= comment.getPostdate() %></span>
+			<span>작성자: <%= comment.getNickName() %></span> <span class="comment-date">작성일: <%= comment.getPostdate() %></span>
 		</div>
 		<div class="comment-text">
 			<%= comment.getContent() %>
@@ -131,15 +130,9 @@ for (commentsDTO comment : commentList) { //댓글 리스트
 		</div>
 		<% int likeCheck = ldao.likeCheck((String)session.getAttribute("UserId"), comment.getNum()); //좋아요 확인 %>
 		<% if (likeCheck == 0 && session.getAttribute("UserId") != null) { %>
-		<a
-			href="../Comments/CommentsLike.jsp?num=<%= comment.getNum() %>&boardNum=<%= dto.getNum() %>">
-			<button class="like-button">좋아요</button>
-		</a>
+		<a href="../Comments/CommentsLike.jsp?num=<%=comment.getNum() %>&boardNum=<%=dto.getNum() %>"><img src="../images/1077035.png" id="unlikeButton" class="<%=comment.getNum()%>" style="width: 20px; height: 20px;"></a>
 		<% } else if (likeCheck == 1 && session.getAttribute("UserId") != null) { %>
-		<a
-			href="../Comments/CommentsLike.jsp?num=<%= comment.getNum() %>&boardNum=<%= dto.getNum() %>">
-			<button class="like-button">좋아요 취소</button>
-		</a>
+		<a href="../Comments/CommentsLike.jsp?num=<%=comment.getNum() %>&boardNum=<%=dto.getNum() %>"><img src="../images/138533.png" id="likeButton" class="<%=comment.getNum()%>" style="width: 20px; height: 20px;"></a>
 		<% } %>
 	</div>
 

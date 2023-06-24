@@ -69,7 +69,7 @@ public class noticeDAO extends JDBConnect{
 
         String query = "SELECT * FROM notice "; 
         //조건 설정
-        if(map.get("searchword") != null) {
+        if(map.get("searchWord") != null) {
         	query += " where " + map.get("searchField") + " " + " like '%" + map.get("searchWord") + "%' "; 
         }
 

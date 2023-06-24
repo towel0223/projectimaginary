@@ -16,8 +16,12 @@
 </head>
 <body>
 <% 
-spotifyapi spotify=new spotifyapi();
-List<songDTO> dto=spotify.getTrack_Sync(); %>
+spotifyapi spotify=new spotifyapi(); 
+String searchField = request.getParameter("searchField");
+String searchWord = request.getParameter("searchWord");
+List<songDTO> dto=spotify.getTrack_Sync();
+List<songDTO> dto2=spotifyapi.getsong(searchField+":"+searchWord);
+%>
 	<jsp:include page="../Common/Nav.jsp" />
 	<h2>인기차트</h2>
 	
@@ -25,7 +29,7 @@ List<songDTO> dto=spotify.getTrack_Sync(); %>
     <form method="get">  
             <select name="searchField"> 
                 <option value="title">제목</option> 
-                <option value="content">내용</option>
+                <option value="artist">아티스트</option>
             </select>
             <input type="text" name="searchWord" />
             <input type="submit" value="검색하기" />
@@ -41,7 +45,8 @@ List<songDTO> dto=spotify.getTrack_Sync(); %>
             <th width="10%"></th>
         </tr>
         <!-- 목록의 내용 --> 
-		<% 
+        
+		<%if(searchWord == null){
  				for(songDTO song: dto){
  		%>
 	    	<tr align="center">
@@ -52,9 +57,23 @@ List<songDTO> dto=spotify.getTrack_Sync(); %>
 		        <td align="center"><a href="../Mp3Player/MusicPlayer.jsp?title=<%=song.getSname()%>">재생하기</a></td>
 		    </tr>
 	    <%
-			}
+
+		}}
+		else{
+			int i=1;
+			for(songDTO song:dto2){
+
+			
 		   
+
 		%>
+			<tr align="center">
+		        <td><%=i++%></td>
+		        <td align="center"><%= song.getSname() %></td>
+		        <td align="center"><img src=<%=song.getPhoto()%>></td>
+		        <td align="center"><%= song.getArtist() %></td>
+		    </tr>
+		<%}}%>
 		        
 	</table>
 	<jsp:include page="../Common/Footer.jsp" />

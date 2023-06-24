@@ -16,7 +16,7 @@ boardDAO dao = new boardDAO(application);
 commentsDAO cdao = new commentsDAO(application);
 likeDAO ldao = new likeDAO(application);
 memberDAO mdao = new memberDAO(application);
-memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"));
+memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"),(String)session.getAttribute("UserPw"));
 dao.updateVisitCount(num);
 boardDTO dto = dao.selectView(num);
 dao.close();
@@ -79,7 +79,7 @@ dao.close();
      	<tr>
      		<td colspan="4" align="center">
      			<%
-     			if(session.getAttribute("UserId") != null && (session.getAttribute("UserId").toString().equals(dto.getId())||session.getAttribute("UserId").toString().contains("admin"))) {
+     			if((session.getAttribute("UserId") != null) && (session.getAttribute("UserId").toString().equals(dto.getId()))||session.getAttribute("UserId").toString().contains("admin")) {
      			%>
      			<button type="button" onclick="location.href='Edit.jsp?num=<%=dto.getNum() %>';">수정하기</button>
      			<button type="button" onclick="deletePost();">삭제하기</button>

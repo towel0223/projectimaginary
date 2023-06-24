@@ -3,6 +3,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="board.boardDTO" %>
 <%@ page import="board.boardDAO" %>
+<%@ page import="like.boardlikeDAO" %>
+<%@ page import="like.boardlikeDTO" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,6 +13,7 @@ request.setCharacterEncoding("utf-8");
 // 게시물 목록 받아오기
 // DAO를 생성해 DB에 연결
 boardDAO dao = new boardDAO(application);
+boardlikeDAO bldao = new boardlikeDAO(application);
 
 // 사용자가 입력한 검색 조건을 Map에 저장
 Map<String, Object> param = new HashMap<String, Object>();
@@ -52,12 +55,11 @@ dao.close();  // DB 연결 닫기
         <!-- 각 칼럼의 이름 --> 
         <tr>
             <th width="8%">번호</th>
-            <th width="40%">제목</th>
+            <th width="44%">제목</th>
             <th width="15%">작성자</th>
             <th width="8%">조회수</th>
-            <th width="10%">작성일</th>
-            <th width="8%">좋아요</th>
-            <th width="11%"></th>
+            <th width="14%">작성일</th>
+            <th width="11%">좋아요</th>
         </tr>
         <!-- 목록의 내용 --> 
 		<%
@@ -82,15 +84,27 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
-		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
-		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><button id="likeButton" class=<%=dto.getNum()%>>좋아요</button></a>
-		            <a href="BoardLike.jsp?num=<%=dto.getNum()%>&like=false"><button id="unlikeButton" class=<%=dto.getNum()%>>싫어요</button></a></td><!-- 좋아요 버튼 -->
-		            <% }%>
-		        </tr>
-		<%
-		    }
-		}
-		%>
+		            <% int BlikeCheck = bldao.boardlikeCheck((String)session.getAttribute("UserId"), dto.getNum());%>
+		           <% if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) { %>
+					    <% if(BlikeCheck == 0) { %>
+					        <td align="center" id="but">
+					            <a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true">
+					                <img src="../images/1077035.png" id="unlikeButton" class="<%=dto.getNum()%>">
+					            </a>
+					        </td><!-- 좋아요 버튼 -->
+					    <% } else { %>
+					        <td align="center" id="but">
+					            <a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true">
+					                <img src="../images/138533.png" id="likeButton" class="<%=dto.getNum()%>">
+					            </a>
+					        </td><!-- 좋아요 버튼 -->
+					    <% } %>
+					<% } %>
+							        </tr>
+				<%
+				    }
+				}
+				%>
 	</table>
 	<!-- 목록 하단의 [글쓰기] 버튼 -->
 	<table border="1" width="90%">

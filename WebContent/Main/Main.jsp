@@ -88,28 +88,29 @@
 		</div>
 		<div class="platform_list">
 			<div class="platform_list1">
-				<img src="../images/Melon.png">
+				<a href="https://www.melon.com/"><img src="../images/Melon.png"></a>
 				<h4>Melon</h4>
 			</div>
 			<div class="platform_list1">
-				<img src="../images/Genie.png">
+				<a href="https://www.genie.co.kr/"><img src="../images/Genie.png"></a>
 				<h4>Genie</h4>
 			</div>
 			<div class="platform_list1">
-				<img src="../images/Flo.jpg">
+				<a href="https://www.music-flo.com/"><img src="../images/Flo.jpg"></a>
 				<h4>Flo</h4>
 			</div>
 			<div class="platform_list1">
-				<img src="../images/Spotify.png">
+				<a href="https://open.spotify.com/"><img src="../images/Spotify.png"></a>
 				<h4>Spotify</h4>
 			</div>
 			<div class="platform_list1">
-				<img src="../images/SoundCloud.jpg">
+				<a href="https://soundcloud.com/"><img src="../images/SoundCloud.jpg"></a>
 				<h4>SoundCloud</h4>
 			</div>
 		</div>
 	</div>
 	
+	<jsp:include page="../Mp3Player/MusicPlayer.jsp" />
 	<jsp:include page="../Common/Footer.jsp" />
 	
 

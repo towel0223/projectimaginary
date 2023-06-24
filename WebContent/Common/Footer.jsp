@@ -11,6 +11,7 @@
     margin-top: 20px;
     background-color: #f2f2f2;
     padding: 10px;
+    height: 120px;
   }
 </style>
 </head>

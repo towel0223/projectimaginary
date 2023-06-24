@@ -85,7 +85,7 @@ public class boardDAO extends JDBConnect  {
             while (rs.next()) {  // 결과를 순화하며...
                 // 한 행(게시물 하나)의 내용을 DTO에 저장
                 boardDTO dto = new boardDTO(); 
-
+                dto.setNum(rs.getInt("num"));
                 dto.setTitle(rs.getString("title"));
                 dto.setContent(rs.getString("content"));
                 dto.setId(rs.getString("id"));

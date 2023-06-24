@@ -85,7 +85,7 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
 		            <% int BlikeCheck = bldao.boardlikeCheck((String)session.getAttribute("UserId"), dto.getNum());%>
-		           <% if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) { %>
+		           <% if(session.getAttribute("UserId") != null) { %>
 					    <% if(BlikeCheck == 0) { %>
 					        <td align="center" id="but">
 					            <a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true">

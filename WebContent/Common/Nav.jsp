@@ -7,7 +7,7 @@
 	function submitForm(value) {
 		var form = document.createElement("form");
 		form.method = "POST";
-		form.action = "../Music/SearchMusic.jsp";
+		form.action = "../Search/SearchPage.jsp";
 		var input = document.createElement("input");
 		input.type = "hidden";
 		input.name = "value";

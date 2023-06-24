@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletContext;
 
+import board.boardDTO;
 import notice.noticeDTO;
 import common.JDBConnect;
 
@@ -15,6 +16,41 @@ public class noticeDAO extends JDBConnect{
 	{
 		super(application);
 	}
+	
+	public List<noticeDTO> selectList(String searchWord) { 
+        List<noticeDTO> bbs = new Vector<noticeDTO>();  // 결과(게시물 목록)를 담을 변수
+
+        String query = "SELECT * FROM board "; 
+      
+        	query += " where content" + " like '%" + searchWord + "%' OR title like '%"+searchWord+"%'"; 
+        
+
+        query += " ORDER BY num DESC "; 
+        
+         try {
+            stmt = con.createStatement();   // 쿼리문 생성
+            rs = stmt.executeQuery(query);  // 쿼리 실행
+
+            while (rs.next()) {  // 결과를 순화하며...
+                // 한 행(게시물 하나)의 내용을 DTO에 저장
+            	noticeDTO dto = new noticeDTO(); 
+
+                dto.setTitle(rs.getString("title"));
+                dto.setContent(rs.getString("content"));
+                dto.setId(rs.getString("id"));
+                dto.setPostdate(rs.getDate("postdate"));
+                
+
+                bbs.add(dto);  // 결과 목록에 저장
+            }
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 조회 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        return bbs;
+    }
 	
 	public noticeDTO getNoticeDTO(int num){
 		noticeDTO dto = new noticeDTO();
@@ -69,7 +105,7 @@ public class noticeDAO extends JDBConnect{
 
         String query = "SELECT * FROM notice "; 
         //조건 설정
-        if(map.get("searchword") != null) {
+        if(map.get("searchWord") != null) {
         	query += " where " + map.get("searchField") + " " + " like '%" + map.get("searchWord") + "%' "; 
         }
 

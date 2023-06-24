@@ -67,12 +67,48 @@ public class boardDAO extends JDBConnect  {
         return totalCount; 
     }
 	
+
+	public List<boardDTO> selectList(String searchWord) { 
+        List<boardDTO> bbs = new Vector<boardDTO>();  // 결과(게시물 목록)를 담을 변수
+
+        String query = "SELECT * FROM board "; 
+      
+        	query += " where content" + " like '%" + searchWord + "%' OR title like '%"+searchWord+"%'"; 
+        
+
+        query += " ORDER BY num DESC "; 
+        
+         try {
+            stmt = con.createStatement();   // 쿼리문 생성
+            rs = stmt.executeQuery(query);  // 쿼리 실행
+
+            while (rs.next()) {  // 결과를 순화하며...
+                // 한 행(게시물 하나)의 내용을 DTO에 저장
+                boardDTO dto = new boardDTO(); 
+
+                dto.setTitle(rs.getString("title"));
+                dto.setContent(rs.getString("content"));
+                dto.setId(rs.getString("id"));
+                dto.setPostdate(rs.getDate("postdate"));
+                dto.setLikes(rs.getInt("likes"));
+
+                bbs.add(dto);  // 결과 목록에 저장
+            }
+        } 
+        catch (Exception e) {
+            System.out.println("게시물 조회 중 예외 발생");
+            e.printStackTrace();
+        }
+
+        return bbs;
+    }
+	
 	public List<boardDTO> selectList(Map<String, Object> map) { 
         List<boardDTO> bbs = new Vector<boardDTO>();  // 결과(게시물 목록)를 담을 변수
 
         String query = "SELECT * FROM board "; 
         //조건 설정
-        if(map.get("searchword") != null) {
+        if(map.get("searchWord") != null) {
         	query += " where " + map.get("searchField") + " " + " like '%" + map.get("searchWord") + "%' "; 
         }
 

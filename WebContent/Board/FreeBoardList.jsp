@@ -86,17 +86,26 @@ dao.close();  // DB 연결 닫기
 		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
 		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
 		            <% int BlikeCheck = bldao.boardlikeCheck((String)session.getAttribute("UserId"), dto.getNum());%>
-		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
-		           	<%if(BlikeCheck == 0) {%>
-		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><img src="../../images/unlike.png" id="likeButton" class=<%=dto.getNum()%>></img></a></td><!-- 좋아요 버튼 -->
-		           	<%}else{ %>
-		           	<td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><img src="../images/like.png" id="likeButton" class=<%=dto.getNum()%>></img></a></td><!-- 좋아요 버튼 -->
-		            <%} }%>
-		        </tr>
-		<%
-		    }
-		}
-		%>
+		           <% if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) { %>
+					    <% if(BlikeCheck == 0) { %>
+					        <td align="center" id="but">
+					            <a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true">
+					                <img src="../images/1077035.png" id="unlikeButton" class="<%=dto.getNum()%>">
+					            </a>
+					        </td><!-- 좋아요 버튼 -->
+					    <% } else { %>
+					        <td align="center" id="but">
+					            <a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true">
+					                <img src="../images/138533.png" id="likeButton" class="<%=dto.getNum()%>">
+					            </a>
+					        </td><!-- 좋아요 버튼 -->
+					    <% } %>
+					<% } %>
+							        </tr>
+				<%
+				    }
+				}
+				%>
 	</table>
 	<!-- 목록 하단의 [글쓰기] 버튼 -->
 	<table border="1" width="90%">

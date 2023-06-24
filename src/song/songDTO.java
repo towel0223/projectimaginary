@@ -1,14 +1,14 @@
 package song;
 
-import java.sql.Blob;
-import java.sql.Date;
+import se.michaelthelin.spotify.model_objects.specification.Image;
 
 public class songDTO {
 	private int snum;
 	private String stitle;
 	private String sname;
-	private Date sdate;
-	private String sphoto;
+	private String artist;
+	private Integer Duration;
+	private Image sphoto;
 
 	public int getSnum() {
 		return snum;
@@ -28,20 +28,26 @@ public class songDTO {
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-	public Date getSdate() {
-		return sdate;
+	public Integer getDuration() {
+		return Duration;
 	}
-	public void setSdate(Date sdate) {
-		this.sdate = sdate;
+	public void setDuration(Integer Duration) {
+		this.Duration = Duration;
 	}
-	public String getSphoto() {
+	public Image getPhoto() {
 		return sphoto;
 	}
-	public void setSphoto(String sphoto) {
+	public void setPhoto(Image sphoto) {
 		this.sphoto = sphoto;
 	}
 	public songDTO() {
 		super();
+	}
+	public String getArtist() {
+		return artist;
+	}
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
 
 

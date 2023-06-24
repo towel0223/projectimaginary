@@ -63,6 +63,7 @@ dao.close();  // DB 연결 닫기
             <th width="11%"></th>
         </tr>
         <!-- 목록의 내용 --> 
+<<<<<<< HEAD
       <%
       if (boardLists.isEmpty()) {// 게시물이 하나도 없을 때 
       %>
@@ -108,5 +109,49 @@ dao.close();  // DB 연결 닫기
    <script>
    var 
    </script>
+=======
+		<%
+		if (boardLists.isEmpty()) {// 게시물이 하나도 없을 때 
+		%>
+		        <tr>
+		            <td colspan="5" align="center"> 등록된 게시물이 없습니다^^* </td>
+		        </tr>
+		<%
+		} else {// 게시물이 있을 때
+		    // int virtualNum = 0;  // 화면상에서의 게시물 번호
+		    for (boardDTO dto : boardLists)
+		    {
+		        // virtualNum = totalCount--;  // 전체 게시물 수에서 시작해 1씩 감소
+		%>
+		        <tr align="center">
+		            <td><%= dto.getNum() %></td>  <!--게시물 번호-->
+		            <td align="left">  <!--제목(+ 하이퍼링크)-->
+		                <a href="View.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %></a> 
+		            </td>
+		            <td align="center"><%= dto.getId() %></td>          <!--작성자 아이디-->
+		            <td align="center"><%= dto.getVisitcount() %></td>  <!--조회수-->
+		            <td align="center"><%= dto.getPostdate() %></td>    <!--작성일-->
+		            <td align="center"><%= dto.getLikes() %></td>    <!--좋아요-->
+		           <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())) {%>
+		            <td align="center" id="but"><a href="BoardLike.jsp?num=<%=dto.getNum() %>&like=true"><button id="likeButton" class=<%=dto.getNum()%>>좋아요</button></a>
+		            <a href="BoardLike.jsp?num=<%=dto.getNum()%>&like=false"><button id="unlikeButton" class=<%=dto.getNum()%>>싫어요</button></a></td><!-- 좋아요 버튼 -->
+		            <% }%>
+		        </tr>
+		<%
+		    }
+		}
+		%>
+	</table>
+	<!-- 목록 하단의 [글쓰기] 버튼 -->
+	<table border="1" width="90%">
+		<tr align="right">
+			<td><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
+		</tr>
+	</table>
+	<jsp:include page="../Common/Footer.jsp" />	
+	<script>
+	var 
+	</script>
+>>>>>>> ccb8038a15cb31c40d08c60927071eb07860a5e7
 </body>
 </html>

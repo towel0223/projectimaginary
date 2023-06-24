@@ -37,7 +37,7 @@
 		</div>
 		<div class="album_list">
 			<div class="album_list1">
-				<a href="https://youtu.be/7HDeem-JaSY"><img src="../images/퀸카.jpg"></a>
+				<a hr  ef="https://youtu.be/7HDeem-JaSY"><img src="../images/퀸카.jpg"></a>
 				<h4>퀸카</h4><h5>(여자)아이들</h5>
 			</div>
 			<div class="album_list1">

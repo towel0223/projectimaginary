@@ -1,6 +1,7 @@
 package song;
 
 import common.JDBConnect;
+import se.michaelthelin.spotify.model_objects.specification.Image;
 
 import java.util.ArrayList;
 import java.sql.Blob;
@@ -29,7 +30,7 @@ public class songDAO extends JDBConnect  {
 				dto.setSnum(rs.getInt(1));
 				dto.setStitle(rs.getString(2));
 				dto.setSname(rs.getString(3));
-				dto.setSdate(rs.getDate(4));
+				dto.setDuration(rs.getInt(4));
 				dto.setSphoto(rs.getString(5));
 			}
 		}catch(Exception e)
@@ -53,15 +54,15 @@ public class songDAO extends JDBConnect  {
 				int num = rs.getInt(1);
 				String title = rs.getString(2);
 				String name = rs.getString(3);
-				Date date = rs.getDate(4);
-				String photo = rs.getString(5);
+				Integer date = rs.getInt(4);
+				
 				
 				songDTO dto = new songDTO();
 				dto.setSnum(num);
 				dto.setStitle(title);
 				dto.setSname(name);
-				dto.setSdate(date);
-				dto.setSphoto(photo);
+				dto.setDuration(date);
+				
 				
 				sList.add(dto);
 			}

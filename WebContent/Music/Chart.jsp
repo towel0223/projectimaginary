@@ -3,6 +3,9 @@
 <%@ page import="java.io.BufferedReader, java.io.FileReader" %>
 <%@ page import="java.io.InputStreamReader, java.io.FileInputStream" %>
 <%@ page import="song.chart" %>
+<%@ page import="song.songDTO" %>
+<%@ page import="spotify.spotifyapi" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +14,9 @@
 <link rel="stylesheet" href="./Chart.css">
 </head>
 <body>
+<% 
+spotifyapi spotify=new spotifyapi();
+List<songDTO> dto=spotify.getTrack_Sync(); %>
 	<jsp:include page="../Common/Nav.jsp" />
 	<h2>인기차트</h2>
 	
@@ -29,28 +35,19 @@
         <tr>
             <th width="5%">순위</th>
             <th width="30%">제목</th>
-            <th width="20%">앨범</th>
-            <th width="20%">아티스트</th>
-            <th width="20%">제작사</th>
-            <th width="5%">재생하기</th>
+            <th width="30%">앨범</th>
+            <th width="30%">아티스트</th>
         </tr>
         <!-- 목록의 내용 --> 
-		<%
- 			chart song = new chart();
- 			String[] title = song.title();
- 			String[] album = song.album();
- 			String[] artist = song.artist();
- 			String[] maker = song.maker();
- 				
- 			for(int i=0; i<100; i++){
+		<% 
+ 				for(songDTO song: dto){
  		%>
 	    	<tr align="center">
-		        <td><%=i+1 %></td>
-		        <td align="center"><%= title[i] %></td>
-		        <td align="center"><%= album[i] %></td> 
-		        <td align="center"><%= artist[i] %></td>
-		        <td align="center"><%= maker[i] %></td>
-		        <td align="center"><img class="play" src="../images/play.png"></td>
+		        <td><%=song.getSnum() %></td>
+		        <td align="center"><%= song.getSname() %></td>
+		        <td align="center"><%= song.getStitle() %></td> 
+		        <td align="center"><%= song.getPhoto() %></td>
+		        <td align="center"><%= song.getArtist() %></td>
 		    </tr>
 	    <%
 			}

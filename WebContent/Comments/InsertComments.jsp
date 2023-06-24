@@ -8,7 +8,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 memberDAO mdao = new memberDAO(application);
-memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"), ((String)session.getAttribute("UserPw")));
+memberDTO mdto = mdao.getMemberDTO((String)session.getAttribute("UserId"));
 
 String Ccontent = request.getParameter("Ccontent");
 int num = Integer.parseInt(request.getParameter("num"));

@@ -94,7 +94,18 @@ input[type="text"]:focus {
   outline: 2px solid #4caf50;
 }
 #but {
-	display:flex;	
-	width: 170px;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  width: 170px;
 }
 
+#but img#likeButton {
+  max-width: 20px;
+  height: 20px;
+}
+
+#but img#unlikeButton {
+  max-width: 20px;
+  height: 20px;
+}

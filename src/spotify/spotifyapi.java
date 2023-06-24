@@ -47,7 +47,7 @@ public class spotifyapi {
 
 
 	public static List<songDTO> getTrack_Sync() {
-		
+		int i=1;
 		try {
 			List<songDTO> dto=new ArrayList<songDTO>();
 			// Get top tracks
@@ -56,6 +56,7 @@ public class spotifyapi {
 			for (Track track : trackPaging.getItems()) {
             	 songDTO dto2=new songDTO();
             	 dto2.setSname(track.getName());
+            	 dto2.setSnum(i++);
             	 dto2.setPhoto(track.getAlbum().getImages()[0].getUrl());
             	 dto2.setArtist(track.getArtists()[0].getName());
             	 dto.add(dto2);

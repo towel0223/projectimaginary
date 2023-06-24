@@ -6,6 +6,7 @@
 <%@ page import="notice.noticeDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="spotify.spotifyapi" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +20,8 @@
 request.setCharacterEncoding("UTF-8");
 String SearchWord = request.getParameter("value");
 boardDAO boardDAO= new boardDAO(application);
+noticeDAO noticeDAO=new noticeDAO(application);
+List<noticeDTO> board2=noticeDAO.selectList(SearchWord);
 List<boardDTO> board=boardDAO.selectList(SearchWord);
 %>
 
@@ -33,11 +36,11 @@ List<boardDTO> board=boardDAO.selectList(SearchWord);
 <%
 for(boardDTO dto: board)
 {%>
-	<%=dto.getTitle()%>
-	<%=dto.getContent()%>
-	<%=dto.getId()%>
-	<%=dto.getPostdate()%>
-	<%=dto.getLikes()%>
+	<a><%=dto.getTitle()%></a>
+	<a><%=dto.getContent()%></a>
+	<a><%=dto.getId()%></a>
+	<a><%=dto.getPostdate()%></a>
+	<a><%=dto.getLikes()%></a>
 <% }
 %>
 </div>
@@ -45,12 +48,27 @@ for(boardDTO dto: board)
 <div>
 <h2>인기차트</h2>
 <hr>
+<% List<songDTO> song=spotifyapi.getsong(SearchWord);
 
+for(songDTO dto: song){
+%>
+<a><%= dto.getSname()%></a>
+<img src=<%=dto.getPhoto()%>>
+<a><%= dto.getArtist()%></a>
+<%} %>
 </div>
 <div>
 <h2>공지사항</h2>
 <hr>
-
+<%
+for(noticeDTO dto: board2)
+{%>
+	<a><%=dto.getTitle()%></a>
+	<a><%=dto.getContent()%></a>
+	<a><%=dto.getId()%></a>
+	<a><%=dto.getPostdate()%></a>
+<% }
+%>
 </div>
 
 

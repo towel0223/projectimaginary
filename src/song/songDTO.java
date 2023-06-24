@@ -1,11 +1,14 @@
 package song;
 
+import se.michaelthelin.spotify.model_objects.specification.Image;
+
 public class songDTO {
 	private int snum;
 	private String stitle;
+	private String sname;
 	private String artist;
-	private String producer;
-	private String album;
+	private Integer Duration;
+	private Image sphoto;
 
 	public int getSnum() {
 		return snum;
@@ -19,26 +22,32 @@ public class songDTO {
 	public void setStitle(String stitle) {
 		this.stitle = stitle;
 	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public Integer getDuration() {
+		return Duration;
+	}
+	public void setDuration(Integer Duration) {
+		this.Duration = Duration;
+	}
+	public Image getPhoto() {
+		return sphoto;
+	}
+	public void setPhoto(Image sphoto) {
+		this.sphoto = sphoto;
+	}
+	public songDTO() {
+		super();
+	}
 	public String getArtist() {
 		return artist;
 	}
 	public void setArtist(String artist) {
 		this.artist = artist;
-	}
-	public String getProducer() {
-		return producer;
-	}
-	public void setProducer(String producer) {
-		this.producer = producer;
-	}
-	public String getAlbum() {
-		return album;
-	}
-	public void setAlbum(String album) {
-		this.album = album;
-	}
-	public songDTO() {
-		super();
 	}
 
 
